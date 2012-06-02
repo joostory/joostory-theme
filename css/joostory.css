@@ -26,7 +26,7 @@ blockquote p { border-left:5px solid #666; padding:3px 0 3px 10px; }
 .footer {clear:both;text-align:center;padding:1em 0;border-width:0em;border-style:solid;border-top-width:0;font-size:10pt;color:#ccc;}
 
 
-.body { position:relative;margin:0 auto;padding:20px 0;width:900px;}
+.body { position:relative;margin:0 auto;padding:20px 0;width:750px;}
 .profile { background:#3c3c3c url("http://static.tumblr.com/udrhgqb/urWm3zow5/joo_simpson01_100x100.png") no-repeat bottom right; }
 
 .sidebar { float:right; width:200px; }
@@ -38,7 +38,7 @@ blockquote p { border-left:5px solid #666; padding:3px 0 3px 10px; }
 .navigation ul li a {text-decoration:none;font-weight:bold;display:block; padding:6px 10px; color:#cecece; font-size:12px;}
 .navigation ul li a:hover { background:#5e5e5e; color:#f9dc41; }
 
-.contents { float:left; width:690px; }
+.contents { float:left; width:540px; }
 .content { position:relative; color:#eef; border-color:#444;line-height:1.8em; background-color:#3c3c3c; border:1px solid #333; border-radius:4px; margin-bottom:10px; padding:10px 15px 20px;}
 .content .media { padding:10px 0; text-align:center; }
 .content .media img { box-shadow:#333 1px 1px 5px; }
