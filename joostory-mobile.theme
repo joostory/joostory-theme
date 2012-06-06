@@ -6,7 +6,7 @@
 	<meta name="description" content="{MetaDescription}" />
 	<meta name="text:DisqusId" content="" />
 	<meta name="text:TwitterId" content="" />
-    
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />    
 	<link rel="shortcut icon" href="{Favicon}" />
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/css/joostory-mobile.css">
@@ -47,12 +47,12 @@
             {/block:Text}
           
            {block:Photo}
-              <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
+              <div class="media">{LinkOpenTag}<img src="{PhotoURL-250}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
               {block:Caption}<div class="photoCaption">{Caption}</div>{/block:Caption}
            {/block:Photo}
           
            {block:Photoset}
-              <div class="media">{Photoset-500}</div>
+              <div class="media">{Photoset-250}</div>
               {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
            {/block:Photoset}
           
@@ -95,7 +95,7 @@
           {/block:Audio}
          
           {block:Video}
-             <div class="media">{Video-500}</div>
+             <div class="media">{Video-250}</div>
              {block:Caption}<div>{Caption}</div>{/block:Caption} 
           {/block:Video}
           
