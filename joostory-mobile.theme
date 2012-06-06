@@ -9,7 +9,7 @@
     
 	<link rel="shortcut icon" href="{Favicon}" />
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
-	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/css/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/css/joostory-mobile.css">
 
 	<!-- Styles -->
 	<style type="text/css">
@@ -33,27 +33,6 @@
 </div>
 <div class="body">
 
-    <div class="sidebar">
-        <div class="sidebox" style="text-align:center;">
-		  <div style="padding:10px 0;">
-			<img src="{PortraitURL-128}">
-		  </div>
-		  {block:IfTwitterId}
-            <a href="https://twitter.com/{text:TwitterId}" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @{text:TwitterId}</a>
-		  {/block:IfTwitterId}
-        </div>
-
-        <div class="sub navigation">
-            <ul class="sidebox">
-        		<li><a href="http://www.google.com/reader/" title="Go to RSS Reader" target="_blank">RSS Reader</a></li>
-        		<li><a href="http://www.google.com/analytics" title="Go to Analytics" target="_blank">Analytics</a></li>
-        		<li><a href="http://www.google.com/adsense/" title="Go to Adsense" target="_blank">Adsense</a></li>
-        		<li><a href="http://appengine.google.com/" title="Go to Google App Engine" target="_blank">App Engine</a></li>
-        	</ul>
-            
-        	<a style="width:174px;height:31px;margin:0 auto;" href="http://mypeople.daum.net/" target="_blank" onclick="window.open(this.href, '', 'width=700px,height=510px');return false;"><img src="http://mimg.daum-img.net/10mail/b_mypeople.gif" /></a>
-        </div>
-    </div>
      
     <div class="contents">
         
@@ -162,6 +141,30 @@
         </div>
 
     </div>
+
+    <div class="sidebar">
+        <div class="sidebox" style="text-align:center;">
+		  <div style="padding:10px 0;">
+			<img src="{PortraitURL-128}">
+		  </div>
+		  {block:IfTwitterId}
+            <a href="https://twitter.com/{text:TwitterId}" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @{text:TwitterId}</a>
+		  {/block:IfTwitterId}
+          <a href="https://twitter.com/{text:TwitterId}" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @{TwitterId}</a>
+        </div>
+
+        <div class="sub navigation">
+            <ul class="sidebox">
+        		<li><a href="http://www.google.com/reader/" title="Go to RSS Reader" target="_blank">RSS Reader</a></li>
+        		<li><a href="http://www.google.com/analytics" title="Go to Analytics" target="_blank">Analytics</a></li>
+        		<li><a href="http://www.google.com/adsense/" title="Go to Adsense" target="_blank">Adsense</a></li>
+        		<li><a href="http://appengine.google.com/" title="Go to Google App Engine" target="_blank">App Engine</a></li>
+        	</ul>
+            
+        	<a style="width:174px;height:31px;margin:0 auto;" href="http://mypeople.daum.net/" target="_blank" onclick="window.open(this.href, '', 'width=700px,height=510px');return false;"><img src="http://mimg.daum-img.net/10mail/b_mypeople.gif" /></a>
+        </div>
+    </div>
+
      
 </div>
 
