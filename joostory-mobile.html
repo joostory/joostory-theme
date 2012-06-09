@@ -11,6 +11,8 @@
 	<link rel="shortcut icon" href="http://assets.tumblr.com/images/default_avatar_16.gif" />    
 	<link rel="alternate" type="application/rss+xml" title="JooStory Theme" href="{RSS}" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/joostory-mobile.css">
+	<link rel="stylesheet" type="text/css" media="all" href="lib/prettify/prettify.css">
+	<link rel="stylesheet" type="text/css" media="all" href="lib/prettify/sunburst.css">
 
 	<!-- Styles -->
 	<style type="text/css">
@@ -22,7 +24,12 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
+	<script src="lib/prettify/prettify.js"></script>
+	<script>
+		$(document).ready(function() {
+			prettyPrint();
+		});
+	</script>
 </head>
 <body>
 
@@ -45,6 +52,28 @@
         
             <h2><a href="{Permalink}">Sample1</a></h2>
 			<p>This is sample text.</p>
+                    
+            <div class="post_meta">
+                <div class="tags">
+                    <div class="tags_title">Tags : </div>
+                    <ul>
+                        <li><a href="#Sample1">Sample1</a></li>
+						<li><a href="#Sample2">Sample2</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+		<div class="content posts">
+
+            <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
+        
+            <h2><a href="{Permalink}">Code Sample</a></h2>
+			<p></p>
+			<pre class="prettyprint linenums">#!/usr/bin/ruby
+
+put "Hello, world!"
+			</pre>
                     
             <div class="post_meta">
                 <div class="tags">
