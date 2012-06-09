@@ -10,8 +10,8 @@
 	<link rel="shortcut icon" href="{Favicon}" />
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/css/joostory.css">
-	<link rel="stylesheet" type="text/css" media="all" href="lib/prettify/prettify.css">
-	<link rel="stylesheet" type="text/css" media="all" href="lib/prettify/sunburst.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/lib/prettify/prettify.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/lib/prettify/sunburst.css">
 	
 	<!-- Styles -->
 	<style type="text/css">
@@ -22,7 +22,7 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="lib/prettify/prettify.js"></script>
+	<script src="http://joostory-theme.googlecode.com/git/lib/prettify/prettify.js"></script>
 	<script>
 		$(document).ready(function() {
 			prettyPrint();
