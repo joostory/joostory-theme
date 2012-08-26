@@ -49,8 +49,8 @@
             <a href="https://twitter.com/{text:TwitterId}" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @{text:TwitterId}</a>
 		  {/block:IfTwitterId}
         </div>
-        
-        <form class='search-form' method='get' aciton='/search'>
+
+        <form class='search-form' method='get' action='/search'>
             <label for='search-text'>검색어</label>
             <input type='search' id='search-text' name='q'>
             <button type='submit'>검색</button>
