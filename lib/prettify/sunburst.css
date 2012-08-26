@@ -14,6 +14,8 @@ pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
 pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
 
 pre.prettyprint, code.prettyprint {
+	font-family:monospace;
+	font-size:12px;
 	background-color: #000;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
@@ -24,9 +26,8 @@ pre.prettyprint, code.prettyprint {
 }
 
 pre.prettyprint {
-	width: 95%;
-	margin: 1em auto;
-	padding: 1em;
+	margin: 10px auto;
+	padding: 10px;
 	white-space: pre-wrap;
 }
 
