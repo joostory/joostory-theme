@@ -17,7 +17,7 @@ blockquote p { border-left:5px solid #666; padding:3px 0 3px 10px; }
 ::selection { background-color:#f9dc41; color:#333;}
 ::-moz-selection { background-color:#f9dc41; color:#333;}
 
-.header { color:#ec8; background-color:#3c3c3c; position:relative;border-bottom:5px solid #f9dc41;height:60px;}
+.header { color:#ec8; background-color:#3c3c3c; position:fixed; width:100%; min-width:750px; border-bottom:5px solid #f9dc41;height:60px; z-index:9999; box-shadow:0 0 5px #333;}
 .header .title a { display:block;font-size:16px;font-weight:bold; line-height:59px;text-indent:20px;padding-top:1px;color:#f9dc41; }
 .header .sites {position:absolute;top:20px;right:15px;padding:0 0 0 150px;}
 .header .sites li { list-style:none;float:left;}
@@ -25,7 +25,7 @@ blockquote p { border-left:5px solid #666; padding:3px 0 3px 10px; }
 .footer {clear:both;text-align:center;padding:1em 0;border-width:0em;border-style:solid;border-top-width:0;font-size:10pt;color:#ccc;}
 
 
-.body { position:relative;margin:0 auto;padding:20px 0;width:750px;}
+.body { position:relative;margin:0 auto;padding:85px 0 20px;width:750px; }
 
 .sidebar { float:right; width:200px; }
 .sidebox { border:1px solid #444; margin-bottom:5px; border-radius:4px; background:#3c3c3c; }
