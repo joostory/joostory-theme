@@ -12,8 +12,7 @@ a, a:link, a:visited { color:#eef; background-color:transparent; border-color:#9
 a:hover, a:active { color:#f9dc41; }
 ul, ol { padding:0 0 0 20px; margin:0px; }
 ul li, ol li { font-size:12px; }
-blockquote { margin:20px 0 20px 10px; }
-blockquote p { border-left:5px solid #666; padding:3px 0 3px 10px; }
+blockquote { margin:20px 0 20px 10px; border-left:5px solid #666; padding:3px 0 3px 10px; }
 ::selection { background-color:#f9dc41; color:#333;}
 ::-moz-selection { background-color:#f9dc41; color:#333;}
 
