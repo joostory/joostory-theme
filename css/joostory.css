@@ -67,5 +67,5 @@ blockquote { margin:20px 0 20px 10px; border-left:5px solid #666; padding:3px 0 
 
 .search-form { margin-bottom:5px; }
 .search-form label { display:none; }
-.search-form input[type=search] { -webkit-appearance: textfield; border-radius:15px; border:2px solid #333; width:155px; font-size:12px; line-height:12px; height:24px; background-color:#727272; }
+.search-form input[type=search] { -webkit-appearance: textfield; border-radius:15px; border:2px solid #333; width:154px; font-size:12px; line-height:12px; height:24px; background-color:#727272; text-align:center; }
 .search-form button[type=submit] { border-radius:10px; width:35px;height:24px; border:0; background-color:#3c3c3c; color:#ccc; padding:0; }
