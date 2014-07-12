@@ -2,17 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>{Title}{block:PostSummary} | {PostSummary}{/block:PostSummary}{block:SearchPage} | {lang:Search results for SearchQuery}{/block:SearchPage}</title>	
+	<title>{Title}{block:PostSummary} | {PostSummary}{/block:PostSummary}{block:SearchPage} | {lang:Search results for SearchQuery}{/block:SearchPage}</title>
 	<meta name="description" content="{MetaDescription}" />
 	<meta name="text:DisqusId" content="" />
 	<meta name="text:TwitterId" content="" />
-    
+
 	<link rel="shortcut icon" href="{Favicon}" />
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/css/joostory.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/lib/prettify/prettify.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/lib/prettify/sunburst.css">
-	
+
 	<!-- Styles -->
 	<style type="text/css">
 	  {CustomCSS}
@@ -21,8 +19,8 @@
 <!--[if IE]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script src="http://joostory-theme.googlecode.com/git/lib/prettify/prettify.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
 	<script>
 		$(document).ready(function() {
 			prettyPrint();
@@ -63,29 +61,29 @@
         </ul>
       </div>
     </div>
-     
+
     <div class="contents">
-        
+
     {block:Posts}
       <div class="content posts">
 
         <div class="post_date"><abbr>{block:Date}<a href="{Permalink}">{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</a>{/block:Date}</abbr></div>
-        
+
         {block:Text}
           {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
           {Body}
         {/block:Text}
-          
+
         {block:Photo}
           <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
           {block:Caption}<div class="photoCaption">{Caption}</div>{/block:Caption}
         {/block:Photo}
-          
+
         {block:Photoset}
           <div class="media">{Photoset-500}</div>
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         {/block:Photoset}
-          
+
         {block:Quote}
           <div id="quoteText"><h2>{Quote}</h2></div>
           {block:Source}<div id="quoteSource"><p>&mdash;{Source}</p></div>{/block:Source}
@@ -98,7 +96,7 @@
           {block:Description}
           <div>{Description}</div>
           {/block:Description}
-        {/block:Link}       
+        {/block:Link}
 
         {block:Chat}
           {block:Title}<h2>{Title}</h2>{/block:Title}
@@ -115,7 +113,7 @@
             <div class="audio">{AudioPlayerBlack}</div>
             </div>
           </div>
-          <div class="audioright"> 
+          <div class="audioright">
             <div class="audioCaption">{block:Artist}<b>{Artist}</b>{/block:Artist}
           <p>&mdash;{block:TrackName}{TrackName}{/block:TrackName}</p>
             </div>
@@ -128,14 +126,14 @@
 
         {block:Video}
           <div class="media">{Video-500}</div>
-          {block:Caption}<div>{Caption}</div>{/block:Caption} 
+          {block:Caption}<div>{Caption}</div>{/block:Caption}
         {/block:Video}
 
         {block:Answer}
           <h3>{Asker} asked: {Question}</h3>
           {Answer}
         {/block:Answer}
-          
+
         {block:HasTags}
         <div class="post_meta">
             <div class="tags">
@@ -148,16 +146,16 @@
             </div>
         </div>
         {/block:HasTags}
-            
-            
-        {block:PermalinkPage} 
+
+
+        {block:PermalinkPage}
         <div id="disqus_thread"></div>
         {/block:PermalinkPage}
       </div>
     {/block:Posts}
 
     <div class="page">
-        
+
       {block:Pagination}
         {block:PreviousPage}<a href="{PreviousPage}" class="prev_page">&#171; Previous</a>{/block:PreviousPage}
         {block:NextPage}<a href="{NextPage}" class="next_page">Next &#187;</a>{/block:NextPage}
@@ -169,9 +167,9 @@
         {block:PreviousPost}<a href="{PreviousPost}" class="next_page">Next &#187;</a>{/block:PreviousPost}
         {block:NextPost}<a href="{NextPost}" class="prev_page">&#171; Previous</a>{/block:NextPost}
       {/block:PermalinkPagination}
-        
+
     </div>
-  </div> 
+  </div>
 </div>
 
 <div class="footer">
@@ -179,12 +177,12 @@
 </div>
 
 
-{block:PermalinkPage} 
+{block:PermalinkPage}
 <script type="text/javascript">
   var disqus_url = "{Permalink}";
   var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";
   /**
-    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
     */
   (function() {
    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -194,7 +192,9 @@
 </script>
 {/block:PermalinkPage}
 
+{block:IfTwitterId}
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+{/block:IfTwitterId}
 
 </body>
 </html>
