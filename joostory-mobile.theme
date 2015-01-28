@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>{Title}{block:PostSummary} | {PostSummary}{/block:PostSummary}{block:SearchPage} | {lang:Search results for SearchQuery}{/block:SearchPage}</title>	
+	<title>{Title}{block:PostSummary} | {PostSummary}{/block:PostSummary}{block:SearchPage} | {lang:Search results for SearchQuery}{/block:SearchPage}</title>
 	<meta name="description" content="{MetaDescription}" />
 	<meta name="text:DisqusId" content="" />
 	<meta name="text:TwitterId" content="" />
-<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />    
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 	<link rel="shortcut icon" href="{Favicon}" />
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" type="text/css" media="all" href="http://joostory-theme.googlecode.com/git/css/joostory-mobile.css">
@@ -22,12 +22,7 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="http://joostory-theme.googlecode.com/git/lib/prettify/prettify.js"></script>
-	<script>
-		$(document).ready(function() {
-			prettyPrint();
-		});
-	</script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
 </head>
 <body>
 
@@ -40,41 +35,41 @@
 </div>
 <div class="body">
 
-     
+
     <div class="contents">
-        
+
     {block:Posts}
         <div class="content posts">
 
             <div class="post_date"><abbr>{block:Date}<a href="{Permalink}">{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</a>{/block:Date}</abbr></div>
-        
+
             {block:Text}
             {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
             {Body}
             {/block:Text}
-          
+
            {block:Photo}
               <div class="media">{LinkOpenTag}<img src="{PhotoURL-250}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
               {block:Caption}<div class="photoCaption">{Caption}</div>{/block:Caption}
            {/block:Photo}
-          
+
            {block:Photoset}
               <div class="media">{Photoset-250}</div>
               {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
            {/block:Photoset}
-          
+
            {block:Quote}
               <div id="quoteText"><h2>{Quote}</h2></div>
               {block:Source}<div id="quoteSource"><p>&mdash;{Source}</p></div>{/block:Source}
            {/block:Quote}
-    
+
            {block:Link}
               <h2><a href="{URL}" {Target}>{Name}</a></h2>
               {block:Description}
               <div>{Description}</div>
               {/block:Description}
-           {/block:Link}       
-          
+           {/block:Link}
+
           {block:Chat}
              {block:Title}<h2>{Title}</h2>{/block:Title}
              <ul class="chat">
@@ -83,14 +78,14 @@
                 {/block:Lines}
              </ul>
           {/block:Chat}
-    
+
           {block:Audio}
              <div class="audioleft">
                 <div class="audioc">
                 <div class="audio">{AudioPlayerBlack}</div>
                 </div>
              </div>
-             <div class="audioright"> 
+             <div class="audioright">
                 <div class="audioCaption">{block:Artist}<b>{Artist}</b>{/block:Artist}
     <p>&mdash;{block:TrackName}{TrackName}{/block:TrackName}</p>
                 </div>
@@ -100,17 +95,17 @@
                 {block:Caption}{Caption}{/block:Caption}
              </div>
           {/block:Audio}
-         
+
           {block:Video}
              <div class="media">{Video-250}</div>
-             {block:Caption}<div>{Caption}</div>{/block:Caption} 
+             {block:Caption}<div>{Caption}</div>{/block:Caption}
           {/block:Video}
-          
+
           {block:Answer}
              <h3>{Asker} asked: {Question}</h3>
              {Answer}
           {/block:Answer}
-          
+
             {block:HasTags}
             <div class="post_meta">
                 <div class="tags">
@@ -123,16 +118,16 @@
                 </div>
             </div>
             {/block:HasTags}
-            
-            
-            {block:PermalinkPage} 
+
+
+            {block:PermalinkPage}
             <div id="disqus_thread"></div>
             {/block:PermalinkPage}
         </div>
     {/block:Posts}
 
         <div class="page">
-        
+
         {block:Pagination}
             {block:PreviousPage}<a href="{PreviousPage}" class="prev_page">&#171; Previous</a>{/block:PreviousPage}
             {block:NextPage}<a href="{NextPage}" class="next_page">Next &#187;</a>{/block:NextPage}
@@ -144,7 +139,7 @@
             {block:PreviousPost}<a href="{PreviousPost}" class="next_page">Next &#187;</a>{/block:PreviousPost}
             {block:NextPost}<a href="{NextPost}" class="prev_page">&#171; Previous</a>{/block:NextPost}
         {/block:PermalinkPagination}
-        
+
         </div>
 
     </div>
@@ -167,12 +162,12 @@
         		<li><a href="http://www.google.com/adsense/" title="Go to Adsense" target="_blank">Adsense</a></li>
         		<li><a href="http://appengine.google.com/" title="Go to Google App Engine" target="_blank">App Engine</a></li>
         	</ul>
-            
+
         	<a style="width:174px;height:31px;margin:0 auto;" href="http://mypeople.daum.net/" target="_blank" onclick="window.open(this.href, '', 'width=700px,height=510px');return false;"><img src="http://mimg.daum-img.net/10mail/b_mypeople.gif" /></a>
         </div>
     </div>
 
-     
+
 </div>
 
 <div class="footer">
@@ -180,12 +175,12 @@
 </div>
 
 
-{block:PermalinkPage} 
+{block:PermalinkPage}
 <script type="text/javascript">
   var disqus_url = "{Permalink}";
   var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";
   /**
-    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
     */
   (function() {
    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

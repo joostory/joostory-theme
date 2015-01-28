@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>JooStory Theme</title>	
+	<title>JooStory Theme</title>
 	<meta name="description" content="{MetaDescription}" />
 	<meta name="text:DisqusId" content="" />
 	<meta name="text:TwitterId" content="" />
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
 
-	<link rel="shortcut icon" href="http://assets.tumblr.com/images/default_avatar_16.gif" />    
+	<link rel="shortcut icon" href="http://assets.tumblr.com/images/default_avatar_16.gif" />
 	<link rel="alternate" type="application/rss+xml" title="JooStory Theme" href="{RSS}" />
 	<link rel="stylesheet" type="text/css" media="all" href="css/joostory-mobile.css">
 	<link rel="stylesheet" type="text/css" media="all" href="lib/prettify/prettify.css">
@@ -24,17 +24,12 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="lib/prettify/prettify.js"></script>
-	<script>
-		$(document).ready(function() {
-			prettyPrint();
-		});
-	</script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
 </head>
 <body>
 
 <div class="header">
-    <h1 class="title"><a href="/" title="JooStory Theme">JooStory Theme</a></h1>
+  <div class="title"><a href="/" title="JooStory Theme">JooStory Theme</a></div>
 	<div class="sites" class="navigation">
 		<ul>
 		  <li><a href="http://joostory.net">JooStory.net</li>
@@ -42,39 +37,37 @@
 	</div>
 </div>
 <div class="body">
+    <div class="contents posts">
 
-     
-    <div class="contents">
-        
-        <div class="content posts">
+      <div class="content">
+				<div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
 
-            <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
-        
-            <h2><a href="{Permalink}">Sample1</a></h2>
-			<p>This is sample text.</p>
-                    
-            <div class="post_meta">
-                <div class="tags">
-                    <div class="tags_title">Tags : </div>
-                    <ul>
-                        <li><a href="#Sample1">Sample1</a></li>
-						<li><a href="#Sample2">Sample2</a></li>
-                    </ul>
-                </div>
+        <h1><a href="{Permalink}">Sample1</a></h1>
+				<p>This is sample text.</p>
+
+        <div class="post_meta">
+            <div class="tags">
+                <div class="tags_title">Tags : </div>
+                <ul>
+                    <li><a href="#Sample1">Sample1</a></li>
+										<li><a href="#Sample2">Sample2</a></li>
+                </ul>
             </div>
         </div>
+      </div>
+		</div>
 
 		<div class="content posts">
 
             <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
-        
-            <h2><a href="{Permalink}">Code Sample</a></h2>
+
+            <h1><a href="{Permalink}">Code Sample</a></h1>
 			<p></p>
 			<pre class="prettyprint linenums">#!/usr/bin/ruby
 
 put "Hello, world!"
 			</pre>
-                    
+
             <div class="post_meta">
                 <div class="tags">
                     <div class="tags_title">Tags : </div>
@@ -89,7 +82,7 @@ put "Hello, world!"
         <div class="content posts">
 
             <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
-          
+
 			<div class="media"><a href="http://24.media.tumblr.com/tumblr_m56lu8OXjR1rxd49do1_1280.jpg"><img src="http://25.media.tumblr.com/tumblr_m56lu8OXjR1rxd49do1_500.jpg" alt="This is sample image" /></a></div>
             <div class="photoCaption"><p>This is sample image</p></div>
 
@@ -109,10 +102,10 @@ put "Hello, world!"
         <div class="content posts">
 
             <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
-         
+
 			<div class="media"><iframe width="500" height="281" src="http://www.youtube.com/embed/qraPm7OwtVA?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0" frameborder="0" allowfullscreen></iframe></div>
-            <div><p>This is video sample</p></div> 
-          
+            <div><p>This is video sample</p></div>
+
             <div class="post_meta">
                 <div class="tags">
                     <div class="tags_title">Tags : </div>
@@ -150,7 +143,7 @@ put "Hello, world!"
         </div>
     </div>
 
-     
+
 </div>
 
 <div class="footer">

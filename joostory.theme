@@ -21,16 +21,11 @@
 <![endif]-->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-	<script>
-		$(document).ready(function() {
-			prettyPrint();
-		});
-	</script>
 </head>
 <body>
 
 <div class="header">
-  <h1 class="title"><a href="/" title="{Title}">{Title}</a></h1>
+  <div class="title"><a href="/" title="{Title}">{Title}</a></div>
   <div class="sites" class="navigation">
 		<ul>
 		</ul>
@@ -70,7 +65,7 @@
         <div class="post_date"><abbr>{block:Date}<a href="{Permalink}">{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</a>{/block:Date}</abbr></div>
 
         {block:Text}
-          {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+          {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
           {Body}
         {/block:Text}
 
@@ -85,13 +80,13 @@
         {/block:Photoset}
 
         {block:Quote}
-          <div id="quoteText"><h2>{Quote}</h2></div>
+          <div id="quoteText"><h1>{Quote}</h1></div>
           {block:Source}<div id="quoteSource"><p>&mdash;{Source}</p></div>{/block:Source}
         {/block:Quote}
 
         {block:Link}
           <div class="link">
-            <h2><a href="{URL}" {Target}>{Name}</a></h2>
+            <h1><a href="{URL}" {Target}>{Name}</a></h1>
           </div>
           {block:Description}
           <div>{Description}</div>
@@ -99,7 +94,7 @@
         {/block:Link}
 
         {block:Chat}
-          {block:Title}<h2>{Title}</h2>{/block:Title}
+          {block:Title}<h1>{Title}</h1>{/block:Title}
           <ul class="chat">
             {block:Lines}
             <li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
