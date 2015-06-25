@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8" />
 	<title>JooStory Theme</title>
@@ -7,156 +8,191 @@
 	<meta name="text:DisqusId" content="" />
 	<meta name="text:TwitterId" content="" />
 
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="shortcut icon" href="http://assets.tumblr.com/images/default_avatar_16.gif" />
 	<link rel="alternate" type="application/rss+xml" title="JooStory Theme" href="{RSS}" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="css/joostory.css">
 
 	<!-- Styles -->
 	<style type="text/css">
-	  .header .title a { text-indent:-10000px;height:59px;width:140px;margin-left:10px;padding-top:0px;background:url("http://static.tumblr.com/udrhgqb/18pm3y1yr/joostory_logo_main_yellow.png");}
-	  .profile { background:#3c3c3c url("http://static.tumblr.com/udrhgqb/urWm3zow5/joo_simpson01_100x100.png") no-repeat bottom right; }
+		/*.header .title a { text-indent:-10000px;height:59px;width:140px;margin-left:10px;padding-top:0px;background:url("http://static.tumblr.com/udrhgqb/18pm3y1yr/joostory_logo_main_yellow.png");}
+	  .profile { background:#3c3c3c url("http://static.tumblr.com/udrhgqb/urWm3zow5/joo_simpson01_100x100.png") no-repeat bottom right; }*/
 	</style>
 
-<!--[if IE]>
+	<!--[if IE]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
+	<nav class="navbar navbar-joostory navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">JooStory Theme</a>
+			</div>
 
-<div class="header">
-  <div class="title"><a href="/" title="JooStory Theme">JooStory Theme</a></div>
-	<div class="sites" class="navigation">
-		<ul>
-		  <li><a href="http://joostory.net">JooStory.net</li>
-		</ul>
-	</div>
-</div>
-<div class="body">
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<form class="navbar-form navbar-right" role="search" method='get' action='/search'>
+					<div class="form-group input-group">
+						<input type="text" class="form-control" placeholder="Search" name="q">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+								<span class="sr-only"></span>
+							</button>
+						</span>
+					</div>
+				</form>
 
-    <div class="sidebar">
-        <div class="sidebox" style="text-align:center;">
-		  <div style="padding:10px 0;">
-			<img src="http://assets.tumblr.com/images/default_avatar_128.gif">
-		  </div>
-            <a href="https://twitter.com/JooStory" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @JooStory</a>
-        </div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/archive">Archive</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-        <form class='search-form' method='get' action='/search'>
-            <label for='search-text'>검색어</label>
-            <input type='search' id='search-text' name='q'>
-            <button type='submit'>검색</button>
-        </form>
 
-        <div class="sub navigation">
-            <ul class="sidebox">
-        		<li><a href="http://www.google.com/reader/" title="Go to RSS Reader" target="_blank">RSS Reader</a></li>
-        		<li><a href="http://www.google.com/analytics" title="Go to Analytics" target="_blank">Analytics</a></li>
-        		<li><a href="http://www.google.com/adsense/" title="Go to Adsense" target="_blank">Adsense</a></li>
-        		<li><a href="http://appengine.google.com/" title="Go to Google App Engine" target="_blank">App Engine</a></li>
-        	</ul>
+	<div class="container">
+		<div class="contents">
+			<div class="content posts">
+				<div class="post_date">
+					<abbr><a href="{Permalink}">5 Jan 2012</a></abbr>
+				</div>
 
-        	<a style="width:174px;height:31px;margin:0 auto;" href="http://mypeople.daum.net/" target="_blank" onclick="window.open(this.href, '', 'width=700px,height=510px');return false;"><img src="http://mimg.daum-img.net/10mail/b_mypeople.gif" /></a>
-        </div>
-    </div>
+				<h1><a href="{Permalink}">Sample1</a></h1>
+				<p>This is sample text.</p>
 
-    <div class="contents">
+				<div class="post_meta">
+					<div class="tags">
+						<div class="tags_title"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span></div>
+						<ul>
+							<li><a href="#Sample1">Sample1</a></li>
+							<li><a href="#Sample2">Sample2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-        <div class="content posts">
+			<div class="content posts">
 
-            <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
+				<div class="post_date">
+					<abbr><a href="{Permalink}">5 Jan 2012</a></abbr>
+				</div>
 
-            <h1><a href="{Permalink}">Sample1</a></h1>
-			<p>This is sample text.</p>
-
-            <div class="post_meta">
-                <div class="tags">
-                    <div class="tags_title">Tags : </div>
-                    <ul>
-                        <li><a href="#Sample1">Sample1</a></li>
-						<li><a href="#Sample2">Sample2</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-		<div class="content posts">
-
-            <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
-
-            <h1><a href="{Permalink}">Code Sample</a></h1>
-			<p></p>
-			<pre class="prettyprint linenums">#!/usr/bin/ruby
+				<h1><a href="{Permalink}">Code Sample</a></h1>
+				<p></p>
+				<pre class="prettyprint linenums">#!/usr/bin/ruby
 
 put "Hello, world!"</pre>
 
-            <div class="post_meta">
-                <div class="tags">
-                    <div class="tags_title">Tags : </div>
-                    <ul>
-                        <li><a href="#Sample1">Sample1</a></li>
-						<li><a href="#Sample2">Sample2</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+				<div class="post_meta">
+					<div class="tags">
+						<div class="tags_title">Tags : </div>
+						<ul>
+							<li><a href="#Sample1">Sample1</a></li>
+							<li><a href="#Sample2">Sample2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-        <div class="content posts">
+			<div class="content posts">
 
-            <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
+				<div class="post_date">
+					<abbr><a href="{Permalink}">5 Jan 2012</a></abbr>
+				</div>
 
-			<div class="media"><a href="http://24.media.tumblr.com/tumblr_m56lu8OXjR1rxd49do1_1280.jpg"><img src="http://25.media.tumblr.com/tumblr_m56lu8OXjR1rxd49do1_500.jpg" alt="This is sample image" /></a></div>
-            <div class="photoCaption"><p>This is sample image</p></div>
+				<div class="media">
+					<a href="http://24.media.tumblr.com/tumblr_m56lu8OXjR1rxd49do1_1280.jpg">
+						<img src="http://25.media.tumblr.com/tumblr_m56lu8OXjR1rxd49do1_500.jpg" alt="This is sample image" />
+					</a>
+				</div>
+				<div class="photoCaption">
+					<p>This is sample image</p>
+				</div>
 
-            <div class="post_meta">
-                <div class="tags">
-                    <div class="tags_title">Tags : </div>
-                    <ul>
-                        <li><a href="#Sample1">Sample1</a></li>
-						<li><a href="#Sample2">Sample2</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="content posts">
-
-            <div class="post_date"><abbr><a href="{Permalink}">5 Jan 2012</a></abbr></div>
-
-			<div class="media"><iframe width="500" height="281" src="http://www.youtube.com/embed/qraPm7OwtVA?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0" frameborder="0" allowfullscreen></iframe></div>
-            <div><p>This is video sample</p></div>
-
-            <div class="post_meta">
-                <div class="tags">
-                    <div class="tags_title">Tags : </div>
-                    <ul>
-                        <li><a href="#Sample1">Sample1</a></li>
-						<li><a href="#Sample2">Sample2</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+				<div class="post_meta">
+					<div class="tags">
+						<div class="tags_title">Tags : </div>
+						<ul>
+							<li><a href="#Sample1">Sample1</a></li>
+							<li><a href="#Sample2">Sample2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
 
-        <div class="page">
-          <a class="prev_page">&#171; Previous</a>
-          <a class="next_page">Next &#187;</a>
-        </div>
 
-    </div>
+			<div class="content posts">
 
-</div>
+				<div class="post_date">
+					<abbr><a href="{Permalink}">5 Jan 2012</a></abbr>
+				</div>
 
-<div class="footer">
-    &copy; Joo
-</div>
+				<div class="media">
+					<div class="embed-responsive embed-responsive-16by9">
+						<iframe width="500" height="281" src="http://www.youtube.com/embed/qraPm7OwtVA?wmode=transparent&autohide=1&egm=0&hd=1&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&showsearch=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div>
+					<p>This is video sample</p>
+				</div>
+
+				<div class="post_meta">
+					<div class="tags">
+						<div class="tags_title">Tags : </div>
+						<ul>
+							<li><a href="#Sample1">Sample1</a></li>
+							<li><a href="#Sample2">Sample2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+
+		<nav>
+			<ul class="pager">
+				<li class="previous">
+					<a href="#">
+						<span aria-hidden="true">&larr;</span> Older</a>
+				</li>
+				<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+			</ul>
+		</nav>
+
+	</div>
+
+	<footer class="footer text-center">
+		&copy; Joo
+	</footer>
+
+
+	<script>
+		! function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "http://platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}
+		}(document, "script", "twitter-wjs");
+	</script>
 
 </body>
+
 </html>
