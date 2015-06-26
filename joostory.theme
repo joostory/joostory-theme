@@ -21,7 +21,10 @@
 
 	<!-- Styles -->
 	<style type="text/css">
-	  {CustomCSS}
+		{block:PermalinkPage}
+		.content h1 { font-size:28px; margin: 5px 0 25px; }
+		{/block:PermalinkPage}
+		{CustomCSS}
 	</style>
 
 	<!-- HTML5 Shiv -->
@@ -31,11 +34,6 @@
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	{block:IfGoogleAdsensePublisherID}
-		{block:IfGoogleAdsenseSlotID}
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		{/block:IfGoogleAdsenseSlotID}
-	{/block:IfGoogleAdsensePublisherID}
 </head>
 <body>
 
@@ -75,11 +73,12 @@
   <div class="contents">
 		{block:IfGoogleAdsensePublisherID}
 			{block:IfGoogleAdsenseSlotID}
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="{text:Google Adsense Publisher ID}"
-         data-ad-slot="{text:Google Adsense Slot ID}"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+				style="display:block"
+				data-ad-client="{text:Google Adsense Publisher ID}"
+				data-ad-slot="{text:Google Adsense Slot ID}"></ins>
+			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 			{/block:IfGoogleAdsenseSlotID}
 		{/block:IfGoogleAdsensePublisherID}
 
@@ -200,14 +199,14 @@
 
 {block:PermalinkPage}
 	{block:IfDisqusShortname}
-  <script type="text/javascript">
-    (function() {
-     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-     dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
-     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  {/block:IfDisqusShortname}
+	  <script type="text/javascript">
+	    (function() {
+	     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	     dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+	     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	  </script>
+	{/block:IfDisqusShortname}
 {/block:PermalinkPage}
 
 {block:IfGoogleAnalyticsID}
