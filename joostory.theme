@@ -190,6 +190,20 @@
 	</nav>
 	{/block:Pagination}
 
+	{block:PermalinkPagination}
+	<nav>
+		<ul class="pager">
+			{block:NextPost}
+			<li class="previous"><a href="{NextPost}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+			{/block:NextPost}
+
+			{block:PreviousPost}
+			<li class="next"><a href="{PreviousPost}">Next <span aria-hidden="true">&rarr;</span></a></li>
+			{/block:PreviousPost}
+		</ul>
+	</nav>
+    {/block:PermalinkPagination}
+
 </div>
 
 <footer class="footer text-center">
