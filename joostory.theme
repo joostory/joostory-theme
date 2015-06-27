@@ -10,6 +10,7 @@
 	<meta name="text:Google Analytics ID" content="">
 	<meta name="text:Google Adsense Publisher ID" content="">
 	<meta name="text:Google Adsense Slot ID" content="">
+	<meta name="if:Endless Scroll" content="1">
 	{/block:Hidden}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,7 +18,7 @@
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/PIRnqi897/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/UKunqkzgr/joostory.css">
 
 	<!-- Styles -->
 	<style type="text/css">
@@ -75,9 +76,10 @@
 			{block:IfGoogleAdsenseSlotID}
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<ins class="adsbygoogle"
-				style="display:block"
+				style="display:block;margin-bottom:20px"
 				data-ad-client="{text:Google Adsense Publisher ID}"
-				data-ad-slot="{text:Google Adsense Slot ID}"></ins>
+				data-ad-slot="{text:Google Adsense Slot ID}"
+				data-ad-format="auto"></ins>
 			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 			{/block:IfGoogleAdsenseSlotID}
 		{/block:IfGoogleAdsensePublisherID}
@@ -210,6 +212,14 @@
 	&copy; Joo
 </footer>
 
+{block:IndexPage}
+	{block:IfEndlessScroll}
+	<script src="http://static.tumblr.com/udrhgqb/hN0nql2oc/endless_scroll.js"></script>
+	<script>
+	$.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
+	</script>
+	{/block:IfEndlessScroll}
+{/block:IndexPage}
 
 {block:PermalinkPage}
 	{block:IfDisqusShortname}
