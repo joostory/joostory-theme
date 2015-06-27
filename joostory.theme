@@ -33,7 +33,6 @@
       <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
   <![endif]-->
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
