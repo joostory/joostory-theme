@@ -1,4 +1,5 @@
 #tumblr_controls { display:none; }
+html { min-height:100% }
 * { word-break: break-all }
 body { padding-top:70px; background:radial-gradient(#fff, #999) }
 .container { max-width:740px }
@@ -52,7 +53,7 @@ a:hover { text-decoration: none }
   }
 }
 
-.post_meta { margin-top:30px; font-size:12px }
+.post_meta { margin:30px 0 10px; font-size:12px }
 .tags { overflow:hidden }
 .tags .tags_title { float:left; margin-right:15px }
 .tags ul { margin:0; padding:0 }

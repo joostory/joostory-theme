@@ -17,10 +17,13 @@
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/PIRnqi897/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/lpznqqvun/joostory.css">
 
 	<!-- Styles -->
 	<style type="text/css">
+	  {block:PermalinkPage}
+	  .content h1 { font-size:28px; margin: 10px 0 30px; }
+	  {/block:PermalinkPage}
 	  {CustomCSS}
 	</style>
 
