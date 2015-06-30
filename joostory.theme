@@ -18,7 +18,7 @@
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/UKunqkzgr/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/3uBnqrku7/joostory.css">
 
 	<!-- Styles -->
 	<style type="text/css">
@@ -99,7 +99,7 @@
         {/block:Photo}
 
         {block:Photoset}
-          <div class="media">{Photoset-500}</div>
+          <div class="media">{Photoset}</div>
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         {/block:Photoset}
 
