@@ -10,6 +10,7 @@
 	<meta name="text:Google Analytics ID" content="">
 	<meta name="text:Google Adsense Publisher ID" content="">
 	<meta name="text:Google Adsense Slot ID" content="">
+	<meta name="if:Endless Scroll" content="1">
 	{/block:Hidden}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,14 +18,14 @@
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/lpznqqvun/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/3uBnqrku7/joostory.css">
 
 	<!-- Styles -->
 	<style type="text/css">
-	  {block:PermalinkPage}
-	  .content h1 { font-size:28px; margin: 10px 0 30px; }
-	  {/block:PermalinkPage}
-	  {CustomCSS}
+		{block:PermalinkPage}
+		.content h1 { font-size:28px; margin: 5px 0 25px; }
+		{/block:PermalinkPage}
+		{CustomCSS}
 	</style>
 
 	<!-- HTML5 Shiv -->
@@ -32,13 +33,7 @@
       <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
   <![endif]-->
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	{block:IfGoogleAdsensePublisherID}
-		{block:IfGoogleAdsenseSlotID}
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		{/block:IfGoogleAdsenseSlotID}
-	{/block:IfGoogleAdsensePublisherID}
 </head>
 <body>
 
@@ -78,11 +73,13 @@
   <div class="contents">
 		{block:IfGoogleAdsensePublisherID}
 			{block:IfGoogleAdsenseSlotID}
-      <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="{text:Google Adsense Publisher ID}"
-         data-ad-slot="{text:Google Adsense Slot ID}"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+				style="display:block;margin-bottom:20px"
+				data-ad-client="{text:Google Adsense Publisher ID}"
+				data-ad-slot="{text:Google Adsense Slot ID}"
+				data-ad-format="auto"></ins>
+			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 			{/block:IfGoogleAdsenseSlotID}
 		{/block:IfGoogleAdsensePublisherID}
 
@@ -102,7 +99,7 @@
         {/block:Photo}
 
         {block:Photoset}
-          <div class="media">{Photoset-500}</div>
+          <div class="media">{Photoset}</div>
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         {/block:Photoset}
 
@@ -194,23 +191,45 @@
 	</nav>
 	{/block:Pagination}
 
+	{block:PermalinkPagination}
+	<nav>
+		<ul class="pager">
+			{block:NextPost}
+			<li class="previous"><a href="{NextPost}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+			{/block:NextPost}
+
+			{block:PreviousPost}
+			<li class="next"><a href="{PreviousPost}">Next <span aria-hidden="true">&rarr;</span></a></li>
+			{/block:PreviousPost}
+		</ul>
+	</nav>
+    {/block:PermalinkPagination}
+
 </div>
 
 <footer class="footer text-center">
 	&copy; Joo
 </footer>
 
+{block:IndexPage}
+	{block:IfEndlessScroll}
+	<script src="http://static.tumblr.com/udrhgqb/hN0nql2oc/endless_scroll.js"></script>
+	<script>
+	$.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
+	</script>
+	{/block:IfEndlessScroll}
+{/block:IndexPage}
 
 {block:PermalinkPage}
 	{block:IfDisqusShortname}
-  <script type="text/javascript">
-    (function() {
-     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-     dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
-     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  {/block:IfDisqusShortname}
+	  <script type="text/javascript">
+	    (function() {
+	     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	     dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+	     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	  </script>
+	{/block:IfDisqusShortname}
 {/block:PermalinkPage}
 
 {block:IfGoogleAnalyticsID}
