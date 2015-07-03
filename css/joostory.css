@@ -8,13 +8,18 @@ a:hover { text-decoration: none }
 ::selection { background-color:#f9dc41; color:#333;}
 ::-moz-selection { background-color:#f9dc41; color:#333;}
 
-.navbar-joostory { background-color:rgba(64,64,64,0.9); box-shadow:0 1px 3px #999 }
+.navbar-joostory { background-color:rgba(64,64,64,0.9); box-shadow:0 1px 3px #999; border:0 }
 .navbar-joostory .navbar-brand { color:#f9dc41 }
 .navbar-joostory .navbar-nav > li > a { color:#eef; background-color:transparent }
 .navbar-joostory .navbar-nav > li > a:focus,
 .navbar-joostory .navbar-nav > li > a:hover { color:#f9dc41; background-color:transparent }
 .navbar-joostory .navbar-toggle { border-color: #333 }
 .navbar-joostory .navbar-toggle .icon-bar { background-color: #FFF }
+.navbar-joostory .navbar-collapse, .navbar-joostory .navbar-form { border-color: #101010}
+.navbar-joostory .dropdown-menu { background-color:rgba(64,64,64,0.9); border:0 }
+.navbar-joostory .dropdown-menu > li > a { color:#EEF; }
+.navbar-joostory .dropdown-menu > li > a:focus,
+.navbar-joostory .dropdown-menu > li > a:hover { color:#f9dc41; background-color:transparent }
 
 .contents { padding-top:20px }
 .content { position:relative; color:#333; line-height:1.8em; background-color:#fff;
@@ -59,6 +64,14 @@ a:hover { text-decoration: none }
     -webkit-transition: opacity 0.1s ease-in-out 0s
   }
   .post_date abbr a:hover { opacity: 1 }
+}
+
+@media (min-width: 767px) {
+  .navbar-form { padding-right:0 }
+}
+
+@media (max-width: 767px) {
+  .navbar-right { margin-top:0; margin-bottom:0 }
 }
 
 .post_meta { margin:30px 0 10px; font-size:12px }
