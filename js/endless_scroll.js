@@ -12,11 +12,11 @@
 		_loadLock = true;
 
 		$.ajax({
-			url: "/page/" + (_currentPage + 1),
+			url: _pathPrefix + "/page/" + (_currentPage + 1),
 			method: "get"
 		}).done(function(r) {
 			var $result = $(r);
-			var $contents = $result.find(".contents .content");
+			var $contents = $result.find(".contents .post");
 
 			if ($contents.length == 0) {
 				_noMore = true;
@@ -44,6 +44,10 @@
 		}
 	};
 
+	var _makePathPrefix = function() {
+		return location.pathname.split("/page/")[0];
+	};
+
 	var TumblrEndlessScroll = {
 		start: function(container, pager, currentPage) {
 			$container = $(container);
@@ -51,6 +55,7 @@
 			_currentPage = currentPage;
 			_noMore = false;
 			_loadLock = false;
+			_pathPrefix = _makePathPrefix();
 
 			$window = $(window);
 			$window.on("scroll", onScroll);
