@@ -18,7 +18,7 @@
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/xPqnqsa59/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/v7znqwdlt/joostory.css">
 
 	<!-- Styles -->
 	<style type="text/css">
@@ -50,9 +50,18 @@
 		</div>
 
 		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></a>
+          <ul class="dropdown-menu">
+						<li><a href="/archive">Archive</a></li>
+          </ul>
+        </li>
+			</ul>
+
 			<form class="navbar-form navbar-right" role="search" method='get' action='/search'>
 				<div class="form-group input-group">
-					<input type="text" class="form-control" placeholder="Search" name="q">
+					<input type="text" class="form-control" placeholder="Search" name="q" value="{SearchQuery}">
 					<span class="input-group-btn">
 						<button type="submit" class="btn btn-default">
 							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -61,16 +70,24 @@
 					</span>
 				</div>
 			</form>
-
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/archive">Archive</a></li>
-			</ul>
 		</div>
 	</div>
 </nav>
 
 <div class="container">
   <div class="contents">
+		{block:TagPage}
+		<div class="page-header">
+			<h3><span class="label label-tag-active"># {Tag}</span></h3>
+		</div>
+		{/block:TagPage}
+
+		{block:SearchPage}
+		<div class="page-header">
+			<h3><span class="label label-default">{SearchQuery}</span> 으로 검색 ({SearchResultCount} 개)</h3>
+		</div>
+		{/block:SearchPage}
+
 		{block:IfGoogleAdsensePublisherID}
 			{block:IfGoogleAdsenseSlotID}
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -83,8 +100,14 @@
 			{/block:IfGoogleAdsenseSlotID}
 		{/block:IfGoogleAdsensePublisherID}
 
+		{block:NoSearchResults}
+		<div class="content no-content">
+			검색 결과가 없습니다.
+		</div>
+		{/block:NoSearchResults}
+
     {block:Posts}
-      <div class="content posts">
+      <div class="content post">
 
         <div class="post_date"><abbr>{block:Date}<a href="{Permalink}">{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</a>{/block:Date}</abbr></div>
 
@@ -155,14 +178,10 @@
 
         {block:HasTags}
         <div class="post_meta">
-            <div class="tags">
-								<div class="tags_title"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span></div>
-                <ul>
-                {block:Tags}
-                    <li><a href="{TagURL}">{Tag}</a></li>
-                {/block:Tags}
-                </ul>
-            </div>
+					<span class="glyphicon glyphicon-tags tags_title" aria-hidden="true"><span class="sr-only">Tags</span></span>
+	        {block:Tags}
+	        <a href="{TagURL}"><span class="label label-tag">{Tag}</span></a>
+	        {/block:Tags}
         </div>
         {/block:HasTags}
 
@@ -213,7 +232,7 @@
 
 {block:IndexPage}
 	{block:IfEndlessScroll}
-	<script src="http://static.tumblr.com/udrhgqb/hN0nql2oc/endless_scroll.js"></script>
+	<script src="http://static.tumblr.com/udrhgqb/q1Inqwcm4/endless_scroll.js"></script>
 	<script>
 	$.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
 	</script>
