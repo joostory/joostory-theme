@@ -18,7 +18,8 @@
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/PwWnqwu7i/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/XXGnqx8er/joostory.css">
+	<link rel="stylesheet" href="http://css-spinners.com/css/spinner/throbber.css" type="text/css">
 
 	<!-- Styles -->
 	<style type="text/css">
@@ -199,33 +200,43 @@
   </div>
 
 	{block:Pagination}
-	<nav>
-		<ul class="pager">
-			{block:PreviousPage}
-			<li class="previous">
-				<a href="{PreviousPage}"><span aria-hidden="true">&larr;</span> Previous</a>
-			</li>
-			{/block:PreviousPage}
-			{block:NextPage}
-			<li class="next"><a href="{NextPage}">Next <span aria-hidden="true">&rarr;</span></a></li>
-			{/block:NextPage}
-		</ul>
-	</nav>
+		{block:IfNotEndlessScroll}
+		<nav>
+			<ul class="pager">
+				{block:PreviousPage}
+				<li class="previous">
+					<a href="{PreviousPage}"><span aria-hidden="true">&larr;</span> Previous</a>
+				</li>
+				{/block:PreviousPage}
+				{block:NextPage}
+				<li class="next"><a href="{NextPage}">Next <span aria-hidden="true">&rarr;</span></a></li>
+				{/block:NextPage}
+			</ul>
+		</nav>
+		{/block:IfNotEndlessScroll}
 	{/block:Pagination}
 
 	{block:PermalinkPagination}
-	<nav>
-		<ul class="pager">
-			{block:NextPost}
-			<li class="previous"><a href="{NextPost}"><span aria-hidden="true">&larr;</span> Previous</a></li>
-			{/block:NextPost}
+		<nav>
+			<ul class="pager">
+				{block:NextPost}
+				<li class="previous"><a href="{NextPost}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+				{/block:NextPost}
 
-			{block:PreviousPost}
-			<li class="next"><a href="{PreviousPost}">Next <span aria-hidden="true">&rarr;</span></a></li>
-			{/block:PreviousPost}
-		</ul>
-	</nav>
+				{block:PreviousPost}
+				<li class="next"><a href="{PreviousPost}">Next <span aria-hidden="true">&rarr;</span></a></li>
+				{/block:PreviousPost}
+			</ul>
+		</nav>
     {/block:PermalinkPagination}
+
+	{block:IndexPage}
+		{block:IfEndlessScroll}
+		<div class="pager loader">
+			<div class="throbber-loader">Loading…</div>
+		</div>
+		{/block:IfEndlessScroll}
+	{/block:IndexPage}
 
 </div>
 
@@ -235,7 +246,7 @@
 
 {block:IndexPage}
 	{block:IfEndlessScroll}
-	<script src="http://static.tumblr.com/udrhgqb/q1Inqwcm4/endless_scroll.js"></script>
+	<script src="http://static.tumblr.com/udrhgqb/R52nqx8fi/endless_scroll.js"></script>
 	<script>
 	$.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
 	</script>

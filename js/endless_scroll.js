@@ -39,13 +39,14 @@
 		var top = $pager.offset().top,
 			appearTop = $window.scrollTop() + $window.height();
 
-		if (appearTop + 200 > top) {
+		if (appearTop + 400 > top) {
 			_loadList();
 		}
 	};
 
 	var _makePathPrefix = function() {
-		return location.pathname.split("/page/")[0];
+		var prefix = location.pathname.split("/page/")[0];
+		return (prefix.length == 1)? "":prefix;
 	};
 
 	var TumblrEndlessScroll = {

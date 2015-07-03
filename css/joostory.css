@@ -84,4 +84,6 @@ a:hover .label-tag { color:#666; background-color:#f9dc41 }
 .page-header { border:0; margin:0 0 20px }
 .page-header h3 { margin-top:0 }
 
+.loader { padding: 150px 0; text-align: center }
+
 .footer { padding:30px 0 80px; font-size:11px; font-weight:100 }
