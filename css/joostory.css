@@ -26,8 +26,8 @@ a:hover { text-decoration: none }
   border:1px solid #ddd; border-radius:4px; margin-bottom:50px; padding:15px 15px 20px;
   box-shadow:#aaa 1px 1px 3px }
 .content .media { padding: 5px 0; margin:0 0 10px; text-align:center; }
-.content img { box-shadow:#333 1px 1px 5px; max-width:100% }
-.content p img { display:block;margin:0 auto; box-shadow:#333 1px 1px 5px; max-width:100%; }
+.content img { box-shadow:#333 1px 1px 5px; max-width:100%; height:auto }
+.content p img { display:block;margin:0 auto; box-shadow:#333 1px 1px 5px; max-width:100%; height:auto }
 .content ul { padding-bottom:10px; }
 .content li a:hover { color:#f9dc41;}
 .content h1 { margin:0 0 20px; font-size:20px; }
