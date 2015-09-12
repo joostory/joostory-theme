@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+	<title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PermalinkPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{/block:PermalinkPage}{Title}</title>
 	<meta name="description" content="{MetaDescription}" />
 
 	{block:Hidden}
