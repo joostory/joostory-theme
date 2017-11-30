@@ -81,7 +81,7 @@ a:hover { text-decoration: none }
 .post_meta { margin:30px 0 10px; font-size:12px }
 .tags_title { margin-right:10px }
 
-.label-tag { background-color:#aaa; font-size:100% }
+.label-tag { background-color:#aaa; font-size:100%; margin-right:5px }
 .label-tag-active,
 a:hover .label-tag { color:#666; background-color:#f9dc41 }
 

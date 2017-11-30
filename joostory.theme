@@ -12,14 +12,14 @@
 	<meta name="text:Google Adsense Slot ID" content="">
 	<meta name="if:Endless Scroll" content="1">
 	{/block:Hidden}
-
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="shortcut icon" href="{Favicon}" />
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="http://static.tumblr.com/udrhgqb/HFUnrol5c/joostory.css">
-	<link rel="stylesheet" href="http://css-spinners.com/css/spinner/throbber.css" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/RN1p07l2s/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/PGqp04omu/spinner.css">
 
 	<!-- Styles -->
 	<style type="text/css">
@@ -29,12 +29,8 @@
 		{CustomCSS}
 	</style>
 
-	<!-- HTML5 Shiv -->
-  <!--[if lt IE 9]>
-      <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
-  <![endif]-->
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -238,7 +234,7 @@
 	{block:IndexPage}
 		{block:IfEndlessScroll}
 		<div class="pager loader">
-			<div class="throbber-loader">{lang:Loading}</div>
+		  <div class="spinner">{lang:Loading}</div>
 		</div>
 		{/block:IfEndlessScroll}
 	{/block:IndexPage}
@@ -251,7 +247,7 @@
 
 {block:IndexPage}
 	{block:IfEndlessScroll}
-	<script src="http://static.tumblr.com/udrhgqb/R52nqx8fi/endless_scroll.js"></script>
+	<script src="https://static.tumblr.com/udrhgqb/R52nqx8fi/endless_scroll.js"></script>
 	<script>
 	$.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
 	</script>
@@ -263,7 +259,7 @@
 	  <script type="text/javascript">
 	    (function() {
 	     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	     dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+	     dsq.src = 'https://{text:Disqus Shortname}.disqus.com/embed.js';
 	     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	    })();
 	  </script>
