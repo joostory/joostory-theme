@@ -2,7 +2,6 @@
 html { min-height:100% }
 * { word-break: break-all }
 body { padding-top:70px; background:radial-gradient(#fff, #999) }
-.container { max-width:740px }
 a:hover { text-decoration: none }
 
 ::selection { background-color:#f9dc41; color:#333;}
@@ -23,7 +22,7 @@ a:hover { text-decoration: none }
 
 .contents { padding-top:20px }
 .content { position:relative; color:#333; line-height:1.8em; background-color:#fff;
-  border:1px solid #ddd; border-radius:4px; margin-bottom:50px; padding:15px 15px 20px;
+  border:1px solid #ddd; border-radius:8px; margin-bottom:50px; padding:15px 20px 20px;
   box-shadow:#aaa 1px 1px 3px }
 .content .media { padding: 5px 0; margin:0 0 10px; text-align:center; }
 .content img { box-shadow:#333 1px 1px 5px; max-width:100%; height:auto }
@@ -80,6 +79,7 @@ a:hover { text-decoration: none }
 
 .post_meta { margin:30px 0 10px; font-size:12px }
 .tags_title { margin-right:10px }
+.post_comments { margin:30px 0 10px; }
 
 .label-tag { background-color:#aaa; font-size:100%; margin-right:5px }
 .label-tag-active,

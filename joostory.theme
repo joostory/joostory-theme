@@ -10,19 +10,36 @@
 	<meta name="text:Google Analytics ID" content="">
 	<meta name="text:Google Adsense Publisher ID" content="">
 	<meta name="text:Google Adsense Slot ID" content="">
+	<meta name="text:Google Adsense Page Level ID" content="">
+	<meta name="text:Facebook URL" content="">
 	<meta name="if:Endless Scroll" content="1">
+	<meta name="select:Layout Width" content="640px" title="Narrow">
+	<meta name="select:Layout Width" content="780px" title="Regular">
+	<meta name="select:Layout Width" content="960px" title="Wide">
 	{/block:Hidden}
 	
+	{block:PermalinkPage}
+		{block:IfFacebookURL}
+    <!-- OGP -->
+    <meta property="og:type" content="article" />
+    <meta property="article:author" content="{text:Facebook URL}" />
+    <meta property="byl" content="{PostAuthorName}" />
+    <meta property="author" content="{PostAuthorName}" />
+    <!-- OGP -->
+		{/block:IfFacebookURL}
+	{/block:PermalinkPage}
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link rel="shortcut icon" href="{Favicon}" />
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/RN1p07l2s/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/YJ9pz9ju6/joostory.css">
 	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/PGqp04omu/spinner.css">
 
 	<!-- Styles -->
 	<style type="text/css">
+		.container { max-width:{select:Layout Width} }
 		{block:PermalinkPage}
 		.content h1 { font-size:28px; margin: 5px 0 25px; }
 		{/block:PermalinkPage}
@@ -31,6 +48,16 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	{block:IfGoogleAdsensePageLevelID}
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "{text:Google Adsense Page Level ID}",
+          enable_page_level_ads: true
+     });
+	</script>
+	{/block:IfGoogleAdsensePageLevelID}
 </head>
 <body>
 
@@ -55,6 +82,11 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="/archive">{lang:Archive}</a></li>
+						{block:HasPages}
+							{block:Pages}
+							<li><a href="{URL}">{Label}</a></li>	
+							{/block:Pages}
+						{/block:HasPages}
 					</ul>
         		</li>
 			</ul>
@@ -192,7 +224,7 @@
 
         {block:PermalinkPage}
 			{block:IfDisqusShortname}
-				<div id="disqus_thread"></div>
+				<div id="disqus_thread" class="post_comments"></div>
 			{/block:IfDisqusShortname}
         {/block:PermalinkPage}
       </div>
@@ -234,7 +266,7 @@
 	{block:IndexPage}
 		{block:IfEndlessScroll}
 		<div class="pager loader">
-		  <div class="spinner">{lang:Loading}</div>
+		    <div class="spinner">{lang:Loading}</div>
 		</div>
 		{/block:IfEndlessScroll}
 	{/block:IndexPage}
