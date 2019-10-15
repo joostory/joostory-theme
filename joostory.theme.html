@@ -16,6 +16,8 @@
 	<meta name="select:Layout Width" content="640px" title="Narrow">
 	<meta name="select:Layout Width" content="780px" title="Regular">
 	<meta name="select:Layout Width" content="960px" title="Wide">
+	<meta name="select:Syntax Highlight theme" content="default" title="Light">
+	<meta name="select:Syntax Highlight theme" content="vs2015" title="Dark">
 	{/block:Hidden}
 	
 	{block:PermalinkPage}
@@ -34,20 +36,20 @@
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/YJ9pz9ju6/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/yOOpzejg8/joostory.css">
 	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/PGqp04omu/spinner.css">
 
 	<!-- Styles -->
 	<style type="text/css">
 		.container { max-width:{select:Layout Width} }
-		{block:PermalinkPage}
-		.content h1 { font-size:28px; margin: 5px 0 25px; }
-		{/block:PermalinkPage}
 		{CustomCSS}
 	</style>
 
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/{select:Syntax Highlight theme}.min.css">
+	<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 	
 	{block:IfGoogleAdsensePageLevelID}
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -308,6 +310,8 @@
   ga('send', 'pageview');
 </script>
 {/block:IfGoogleAnalyticsID}
+
+<script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>
