@@ -36,7 +36,7 @@
 	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
 	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/C6uq4qusw/joostory.css">
+	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/6pZq0ctpk/joostory.css">
 	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/PGqp04omu/spinner.css">
 
 	<!-- Styles -->
@@ -121,18 +121,6 @@
 			<h3>{lang:SearchResultCount results for SearchQuery}</h3>
 		</div>
 		{/block:SearchPage}
-
-		{block:IfGoogleAdsensePublisherID}
-			{block:IfGoogleAdsenseSlotID}
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				style="display:block;margin-bottom:20px"
-				data-ad-client="{text:Google Adsense Publisher ID}"
-				data-ad-slot="{text:Google Adsense Slot ID}"
-				data-ad-format="auto"></ins>
-			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-			{/block:IfGoogleAdsenseSlotID}
-		{/block:IfGoogleAdsensePublisherID}
 
 		{block:NoSearchResults}
 		<div class="content no-content">
@@ -233,6 +221,21 @@
     {/block:Posts}
 
   </div>
+	
+	{block:PermalinkPage}
+		{block:IfGoogleAdsensePublisherID}
+			{block:IfGoogleAdsenseSlotID}
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<ins class="adsbygoogle"
+				style="display:block;margin-bottom:20px"
+				data-ad-client="{text:Google Adsense Publisher ID}"
+				data-ad-slot="{text:Google Adsense Slot ID}"
+				data-ad-format="auto"></ins>
+			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+			{/block:IfGoogleAdsenseSlotID}
+		{/block:IfGoogleAdsensePublisherID}
+	{/block:PermalinkPage}
+  
 
 	{block:Pagination}
 		{block:IfNotEndlessScroll}
