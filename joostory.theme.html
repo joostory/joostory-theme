@@ -1,306 +1,341 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8" />
-	<title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PermalinkPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{/block:PermalinkPage}{Title}</title>
-	<meta name="description" content="{MetaDescription}" />
+  <meta charset="UTF-8" />
+  <title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PermalinkPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{/block:PermalinkPage}{Title}</title>
+  <meta name="description" content="{MetaDescription}" />
 
-	{block:Hidden}
-	<meta name="text:Disqus Shortname" content="">
-	<meta name="text:Google Analytics ID" content="">
-	<meta name="text:Google Adsense Publisher ID" content="">
-	<meta name="text:Google Adsense Slot ID" content="">
-	<meta name="text:Google Adsense Page Level ID" content="">
-	<meta name="text:Facebook URL" content="">
-	<meta name="if:Endless Scroll" content="1">
-	<meta name="select:Layout Width" content="640px" title="Narrow">
-	<meta name="select:Layout Width" content="780px" title="Regular">
-	<meta name="select:Layout Width" content="960px" title="Wide">
-	<meta name="select:Syntax Highlight theme" content="default" title="Light">
-	<meta name="select:Syntax Highlight theme" content="vs2015" title="Dark">
-	{/block:Hidden}
-	
-	{block:PermalinkPage}
-		{block:IfFacebookURL}
-    <!-- OGP -->
-    <meta property="og:type" content="article" />
-    <meta property="article:author" content="{text:Facebook URL}" />
-    <meta property="byl" content="{PostAuthorName}" />
-    <meta property="author" content="{PostAuthorName}" />
-    <!-- OGP -->
-		{/block:IfFacebookURL}
-	{/block:PermalinkPage}
+  {block:Hidden}
+  <meta name="text:Disqus Shortname" content="">
+  <meta name="text:Google Analytics ID" content="">
+  <meta name="text:Google Adsense Publisher ID" content="">
+  <meta name="text:Google Adsense Slot ID" content="">
+  <meta name="text:Google Adsense Page Level ID" content="">
+  <meta name="text:Facebook URL" content="">
+  <meta name="if:Endless Scroll" content="1">
+  <meta name="select:Layout Width" content="640px" title="Narrow">
+  <meta name="select:Layout Width" content="780px" title="Regular">
+  <meta name="select:Layout Width" content="960px" title="Wide">
+  <meta name="select:Syntax Highlight theme" content="default" title="Light">
+  <meta name="select:Syntax Highlight theme" content="vs2015" title="Dark">
+  {/block:Hidden}
+  
+  {block:PermalinkPage}
+    {block:IfFacebookURL}
+	<!-- OGP -->
+	<meta property="og:type" content="article" />
+	<meta property="article:author" content="{text:Facebook URL}" />
+	<meta property="byl" content="{PostAuthorName}" />
+	<meta property="author" content="{PostAuthorName}" />
+	<!-- OGP -->
+    {/block:IfFacebookURL}
+  {/block:PermalinkPage}
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="shortcut icon" href="{Favicon}" />
-	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
-	<link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/XEwq5iqwp/joostory.css">
-	<link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/PGqp04omu/spinner.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="{Favicon}" />
+  <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+  <link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/LXGq844sk/joostory.css">
+  <link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/PGqp04omu/spinner.css">
 
-	<!-- Styles -->
-	<style type="text/css">
-		.container { max-width:{select:Layout Width} }
-		{CustomCSS}
-	</style>
+  <!-- Styles -->
+  <style type="text/css">
+    .container { max-width:{select:Layout Width} }
+    {CustomCSS}
+  </style>
 
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/{select:Syntax Highlight theme}.min.css">
-	<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	
-	{block:IfGoogleAdsensePageLevelID}
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "{text:Google Adsense Page Level ID}",
-          enable_page_level_ads: true
-     });
-	</script>
-	{/block:IfGoogleAdsensePageLevelID}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/{select:Syntax Highlight theme}.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
+  {block:IfGoogleAdsensePageLevelID}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "{text:Google Adsense Page Level ID}",
+      enable_page_level_ads: true
+   });
+  </script>
+  {/block:IfGoogleAdsensePageLevelID}
 </head>
 <body>
 
 <nav class="navbar navbar-joostory navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="/" title="{Title}">{Title}</a>
-		</div>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" title="{Title}">{Title}</a>
+    </div>
 
-		<div class="collapse navbar-collapse" id="navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-	        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-						<span class="hidden-xs glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-						<span class="visible-xs-inline">{lang:More}</span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><a href="/archive">{lang:Archive}</a></li>
-						{block:HasPages}
-							{block:Pages}
-							<li><a href="{URL}">{Label}</a></li>	
-							{/block:Pages}
-						{/block:HasPages}
-					</ul>
-        		</li>
-			</ul>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="hidden-xs glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+            <span class="visible-xs-inline">{lang:More}</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/archive">{lang:Archive}</a></li>
+            {block:HasPages}
+              {block:Pages}
+              <li><a href="{URL}">{Label}</a></li>  
+              {/block:Pages}
+            {/block:HasPages}
+          </ul>
+        </li>
+      </ul>
 
-			<form class="navbar-form navbar-right" role="search" method='get' action='/search'>
-				<div class="form-group input-group">
-					<input type="text" class="form-control" placeholder="Search" name="q" value="{SearchQuery}">
-					<span class="input-group-btn">
-						<button type="submit" class="btn btn-default">
-							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-							<span class="sr-only"></span>
-						</button>
-					</span>
-				</div>
-			</form>
-		</div>
-	</div>
+      <form class="navbar-form navbar-right" role="search" method='get' action='/search'>
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" value="{SearchQuery}">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              <span class="sr-only"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
 </nav>
 
 <div class="container">
   <div class="contents">
-		{block:TagPage}
-		<div class="page-header">
-			<h3><span class="label label-tag-active"># {Tag}</span></h3>
-		</div>
-		{/block:TagPage}
+    {block:TagPage}
+      <div class="page-header">
+        <h3><span class="label label-tag-active"># {Tag}</span></h3>
+      </div>
+    {/block:TagPage}
 
-		{block:SearchPage}
-		<div class="page-header">
-			<h3>{lang:SearchResultCount results for SearchQuery}</h3>
-		</div>
-		{/block:SearchPage}
+    {block:SearchPage}
+      <div class="page-header">
+        <h3>{lang:SearchResultCount results for SearchQuery}</h3>
+      </div>
+    {/block:SearchPage}
 
-		{block:NoSearchResults}
-		<div class="content no-content">
-			{lang:No results found}
-		</div>
-		{/block:NoSearchResults}
+    {block:NoSearchResults}
+      <div class="content no-content">
+        {lang:No results found}
+      </div>
+    {/block:NoSearchResults}
 
     {block:Posts}
       <div class="content post">
 
-        <div class="post_date"><abbr>{block:Date}<a href="{Permalink}">{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</a>{/block:Date}</abbr></div>
+        <div class="post_date">
+          <abbr>
+            {block:Date}
+            <a href="{Permalink}">{DayOfMOnth}{DayOfMonthSuffix} {ShortMonth} {Year}</a>
+            {/block:Date}
+          </abbr>
+        </div>
 
         {block:Text}
           {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+          
+          {block:PermalinkPage}
           {Body}
+          {/block:PermalinkPage}
         {/block:Text}
 
         {block:Photo}
           <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
+          {block:PermalinkPage}
           {block:Caption}<div class="photoCaption">{Caption}</div>{/block:Caption}
+          {/block:PermalinkPage}
         {/block:Photo}
 
         {block:Photoset}
           <div class="media">{Photoset}</div>
+          {block:PermalinkPage}
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+          {/block:PermalinkPage}
         {/block:Photoset}
 
         {block:Quote}
           <div id="quoteText"><h1>{Quote}</h1></div>
+          {block:PermalinkPage}
           {block:Source}<div id="quoteSource"><p>&mdash;{Source}</p></div>{/block:Source}
+          {/block:PermalinkPage}
         {/block:Quote}
 
         {block:Link}
-			<div class="link">
-				<a href="{URL}" {Target}>
-					<h1>{Name} <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></h1>
-					{block:Excerpt}<em>{Excerpt}</em>{/block:Excerpt}
-					{block:Host}<abbr>{Host}</abbr>{/block:Host}
-				</a>
-			</div>
+          <div class="link">
+            <a href="{URL}" {Target}>
+              <h1>{Name} <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></h1>
+              {block:Excerpt}<em>{Excerpt}</em>{/block:Excerpt}
+              {block:Host}<abbr>{Host}</abbr>{/block:Host}
+            </a>
+          </div>
 
-			{block:Description}
-				<div>{Description}</div>
-			{/block:Description}
+          {block:PermalinkPage}
+          {block:Description}
+            <div>{Description}</div>
+          {/block:Description}
+          {/block:PermalinkPage}
         {/block:Link}
 
         {block:Chat}
-          {block:Title}<h1>{Title}</h1>{/block:Title}
-          <ul class="chat">
-            {block:Lines}
-            <li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
-            {/block:Lines}
-          </ul>
+          {block:Title}
+            <h1>{Title}</h1>
+          {/block:Title}
+          {block:PermalinkPage}
+            <ul class="chat">
+              {block:Lines}
+                <li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
+              {/block:Lines}
+            </ul>
+          {/block:PermalinkPage}
         {/block:Chat}
 
         {block:Audio}
           <div class="audioleft">
             <div class="audioc">
-            <div class="audio">{AudioPlayerBlack}</div>
+              <div class="audio">{AudioPlayerBlack}</div>
             </div>
           </div>
           <div class="audioright">
             <div class="audioCaption">{block:Artist}<b>{Artist}</b>{/block:Artist}
-          <p>&mdash;{block:TrackName}{TrackName}{/block:TrackName}</p>
+              <p>&mdash;{block:TrackName}{TrackName}{/block:TrackName}</p>
             </div>
           </div>
           <div class="audioClear"></div>
-          <div class="audioContainer">
-            {block:Caption}{Caption}{/block:Caption}
-          </div>
+          
+          {block:PermalinkPage}
+            <div class="audioContainer">
+              {block:Caption}{Caption}{/block:Caption}
+            </div>
+          {/block:PermalinkPage}
         {/block:Audio}
 
         {block:Video}
-			<div class="media">{Video-500}</div>
-			{block:Caption}<div>{Caption}</div>{/block:Caption}
+          <div class="media">{Video-500}</div>
+          {block:PermalinkPage}
+            {block:Caption}
+              <div>{Caption}</div>
+            {/block:Caption}
+          {/block:PermalinkPage}
         {/block:Video}
 
         {block:Answer}
-	        <h3>{Asker} asked: {Question}</h3>
-	        {Answer}
+          <h3>{Asker} asked: {Question}</h3>
+          {block:PermalinkPage}
+            {Answer}
+          {/block:PermalinkPage}
         {/block:Answer}
+        
+        {block:IndexPage}
+          <div class="read-more-container">
+            <a class="read-more" href="{Permalink}">내용보기</a>
+          </div>
+        {/block:IndexPage}
 
         {block:HasTags}
         <div class="post_meta">
-			<span class="glyphicon glyphicon-tags tags_title" aria-hidden="true"><span class="sr-only">Tags</span></span>
-	        {block:Tags}
-	        <a href="{TagURL}"><span class="label label-tag">{Tag}</span></a>
-	        {/block:Tags}
+          <span class="glyphicon glyphicon-tags tags_title" aria-hidden="true"><span class="sr-only">Tags</span></span>
+          {block:Tags}
+          <a href="{TagURL}"><span class="label label-tag">{Tag}</span></a>
+          {/block:Tags}
         </div>
         {/block:HasTags}
 
         {block:PermalinkPage}
-			{block:IfDisqusShortname}
-				<div id="disqus_thread" class="post_comments"></div>
-			{/block:IfDisqusShortname}
+          {block:IfDisqusShortname}
+            <div id="disqus_thread" class="post_comments"></div>
+          {/block:IfDisqusShortname}
         {/block:PermalinkPage}
       </div>
     {/block:Posts}
-
   </div>
-	
-	{block:PermalinkPage}
-		{block:IfGoogleAdsensePublisherID}
-			{block:IfGoogleAdsenseSlotID}
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				style="display:block;margin-bottom:20px"
-				data-ad-client="{text:Google Adsense Publisher ID}"
-				data-ad-slot="{text:Google Adsense Slot ID}"
-				data-ad-format="auto"></ins>
-			<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-			{/block:IfGoogleAdsenseSlotID}
-		{/block:IfGoogleAdsensePublisherID}
-	{/block:PermalinkPage}
+  
+  {block:PermalinkPage}
+    {block:IfGoogleAdsensePublisherID}
+      {block:IfGoogleAdsenseSlotID}
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+        style="display:block;margin-bottom:20px"
+        data-ad-client="{text:Google Adsense Publisher ID}"
+        data-ad-slot="{text:Google Adsense Slot ID}"
+        data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      {/block:IfGoogleAdsenseSlotID}
+    {/block:IfGoogleAdsensePublisherID}
+  {/block:PermalinkPage}
   
 
-	{block:Pagination}
-		{block:IfNotEndlessScroll}
-		<nav>
-			<ul class="pager">
-				{block:PreviousPage}
-				<li class="previous">
-					<a href="{PreviousPage}"><span aria-hidden="true">&larr;</span> {lang:Previous page}</a>
-				</li>
-				{/block:PreviousPage}
-				{block:NextPage}
-				<li class="next"><a href="{NextPage}">{lang:Next page} <span aria-hidden="true">&rarr;</span></a></li>
-				{/block:NextPage}
-			</ul>
-		</nav>
-		{/block:IfNotEndlessScroll}
-	{/block:Pagination}
+  {block:Pagination}
+    {block:IfNotEndlessScroll}
+    <nav>
+      <ul class="pager">
+        {block:PreviousPage}
+        <li class="previous">
+          <a href="{PreviousPage}"><span aria-hidden="true">&larr;</span> {lang:Previous page}</a>
+        </li>
+        {/block:PreviousPage}
+        {block:NextPage}
+        <li class="next"><a href="{NextPage}">{lang:Next page} <span aria-hidden="true">&rarr;</span></a></li>
+        {/block:NextPage}
+      </ul>
+    </nav>
+    {/block:IfNotEndlessScroll}
+  {/block:Pagination}
 
-	{block:PermalinkPagination}
-		<nav>
-			<ul class="pager">
-				{block:NextPost}
-				<li class="previous"><a href="{NextPost}"><span aria-hidden="true">&larr;</span> {lang:Previous post}</a></li>
-				{/block:NextPost}
+  {block:PermalinkPagination}
+    <nav>
+      <ul class="pager">
+        {block:NextPost}
+        <li class="previous"><a href="{NextPost}"><span aria-hidden="true">&larr;</span> {lang:Previous post}</a></li>
+        {/block:NextPost}
 
-				{block:PreviousPost}
-				<li class="next"><a href="{PreviousPost}">{lang:Next post} <span aria-hidden="true">&rarr;</span></a></li>
-				{/block:PreviousPost}
-			</ul>
-		</nav>
-    {/block:PermalinkPagination}
+        {block:PreviousPost}
+        <li class="next"><a href="{PreviousPost}">{lang:Next post} <span aria-hidden="true">&rarr;</span></a></li>
+        {/block:PreviousPost}
+      </ul>
+    </nav>
+  {/block:PermalinkPagination}
 
-	{block:IndexPage}
-		{block:IfEndlessScroll}
-		<div class="pager loader">
-		    <div class="spinner">{lang:Loading}</div>
-		</div>
-		{/block:IfEndlessScroll}
-	{/block:IndexPage}
+  {block:IndexPage}
+    {block:IfEndlessScroll}
+    <div class="pager loader">
+      <div class="spinner">{lang:Loading}</div>
+    </div>
+    {/block:IfEndlessScroll}
+  {/block:IndexPage}
 
 </div>
 
 <footer class="footer text-center">
-	&copy; Joo
+  &copy; Joo
 </footer>
 
 {block:IndexPage}
-	{block:IfEndlessScroll}
-	<script src="https://static.tumblr.com/udrhgqb/R52nqx8fi/endless_scroll.js"></script>
-	<script>
-	$.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
-	</script>
-	{/block:IfEndlessScroll}
+  {block:IfEndlessScroll}
+  <script src="https://static.tumblr.com/udrhgqb/R52nqx8fi/endless_scroll.js"></script>
+  <script>
+  $.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
+  </script>
+  {/block:IfEndlessScroll}
 {/block:IndexPage}
 
 {block:PermalinkPage}
-	{block:IfDisqusShortname}
-	  <script type="text/javascript">
-	    (function() {
-	     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	     dsq.src = 'https://{text:Disqus Shortname}.disqus.com/embed.js';
-	     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
-	  </script>
-	{/block:IfDisqusShortname}
+  {block:IfDisqusShortname}
+    <script type="text/javascript">
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'https://{text:Disqus Shortname}.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+  {/block:IfDisqusShortname}
 {/block:PermalinkPage}
 
 {block:IfGoogleAnalyticsID}

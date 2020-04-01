@@ -47,6 +47,8 @@ a:hover { text-decoration: none }
 .content pre.prettyprint { margin: 1em auto; padding: 1em; border-radius:8px; word-wrap:initial; word-break:initial }
 .content pre.prettyprint code { white-space: pre }
 .content figure { margin:1em 0; text-align:center }
+.content .read-more-container .read-more { display:inline-block; padding:6px 15px; border:1px solid #ccc; color:#999;}
+.content .read-more-container .read-more:hover { color:#fff; background-color:#ddd;}
 
 .no-content { text-align:center; padding: 150px 0; font-size:24px; font-weight:100 }
 
