@@ -22,7 +22,7 @@ a:hover { text-decoration: none }
 
 .contents { padding-top:20px }
 .content { position:relative; color:#333; line-height:1.8em; background-color:#fff;
-  border-radius:8px; margin-bottom:50px; padding:15px 20px 20px;
+  border-radius:8px; margin-bottom:50px; padding:20px 30px 40px;
   box-shadow:2px 2px 5px #666 }
 .content .media { padding: 5px 0; margin:0 0 10px; text-align:center; }
 .content img { max-width:100%; height:auto }
@@ -30,7 +30,7 @@ a:hover { text-decoration: none }
 .content p img { display:block;margin:0 auto; max-width:100%; height:auto }
 .content ul { padding-bottom:10px; }
 .content li a:hover { color:#f9dc41;}
-.content h1 { font-size:28px; margin: 5px 0 25px; }
+.content h1 { font-size:22px; margin: 5px 0 25px; }
 .content h2 { font-size:18px }
 .content h3 { font-size:16px }
 .content h4 { font-size:14px }
@@ -80,13 +80,14 @@ a:hover { text-decoration: none }
 
 @media (max-width: 767px) {
   .navbar-right { margin-top:0; margin-bottom:0 }
+  .content { padding: 15px 15px 20px; }
 }
 
 .post_meta { margin:30px 0 10px; font-size:12px }
 .tags_title { margin-right:10px }
 .post_comments { margin:30px 0 10px; }
 
-.label-tag { background-color:#aaa; font-size:100%; margin-right:5px }
+.label-tag { background-color:#aaa; font-size:100%; margin-right:5px; padding:5px 5px 3px; }
 .label-tag-active,
 a:hover .label-tag { color:#666; background-color:#f9dc41 }
 
