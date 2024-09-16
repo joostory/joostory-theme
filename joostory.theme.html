@@ -49,6 +49,7 @@
   <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://static.tumblr.com/udrhgqb/Lf3sjwh6x/script.js"></script>
   
   
   {block:IfGoogleAdsensePageLevelID}
@@ -145,6 +146,23 @@
           {block:PermalinkPage}
           {Body}
           {/block:PermalinkPage}
+
+          {block:IndexPage}
+            <div id="summary-{PostId}" class="post-text" style="margin-bottom: 15px"></div>
+            <script>
+              new Promise((resolve, reject) => {
+                const contentId = "summary-{PostId}"
+                if (makeSummaryFromNpf) {
+                  makeSummaryFromNpf(contentId, {NPF});
+                  resolve("OK SUMMARY " + contentId)
+                } else {
+                  reject("NO SUMMARY FUNCTION " + contentId)
+                }
+              })
+                .then(r => console.debug(r))
+                .catch(e => console.error(e))
+            </script>
+          {/block:IndexPage}
         {/block:Text}
 
         {block:Photo}
