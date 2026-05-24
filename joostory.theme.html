@@ -36,7 +36,8 @@
   <link rel="shortcut icon" href="{Favicon}" />
   <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
   <link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <!-- Modern custom theme stylesheets -->
   <link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/joostory/joostory-theme@{text:Theme Version}/css/joostory.css">
   <link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/joostory/joostory-theme@{text:Theme Version}/css/spinner.css">
 
@@ -48,10 +49,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/{select:Syntax Highlight theme}.min.css">
   <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/joostory/joostory-theme@{text:Theme Version}/js/script.js"></script>
-  
   
   {block:IfGoogleAdsensePageLevelID}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -65,23 +63,24 @@
 </head>
 <body>
 
-<nav class="navbar navbar-joostory navbar-fixed-top">
-  <div class="container-fluid">
+<!-- Responsive Glassmorphism Navigation Bar -->
+<nav class="navbar navbar-joostory">
+  <div class="nav-container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="navbar-brand" href="/" title="{Title}">{Title}</a>
+      <button type="button" class="navbar-toggle" id="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
 
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <span class="hidden-xs glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+    <div class="navbar-right-group" id="navbar-menu">
+      <ul class="navbar-nav">
+        <li class="dropdown" id="more-dropdown">
+          <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" id="dropdown-trigger">
+            <!-- Vertical Three Dots SVG (Visible on desktop) -->
+            <svg class="hidden-xs" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
             <span class="visible-xs-inline">{lang:More}</span>
           </a>
           <ul class="dropdown-menu">
@@ -95,15 +94,13 @@
         </li>
       </ul>
 
-      <form class="navbar-form navbar-right" role="search" method='get' action='/search'>
-        <div class="form-group input-group">
-          <input type="text" class="form-control" placeholder="Search" name="q" value="{SearchQuery}">
-          <span class="input-group-btn">
-            <button type="submit" class="btn btn-default">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              <span class="sr-only"></span>
-            </button>
-          </span>
+      <form class="navbar-form" role="search" method="get" action="/search">
+        <div class="search-input-group">
+          <input type="text" placeholder="Search" name="q" value="{SearchQuery}" aria-label="Search">
+          <button type="submit" aria-label="Submit search">
+            <!-- Search Glass SVG -->
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
         </div>
       </form>
     </div>
@@ -153,8 +150,8 @@
             <script>
               new Promise((resolve, reject) => {
                 const contentId = "summary-{PostId}"
-                if (makeSummaryFromNpf) {
-                  makeSummaryFromNpf(contentId, {NPF});
+                if (window.makeSummaryFromNpf) {
+                  window.makeSummaryFromNpf(contentId, {NPF});
                   resolve("OK SUMMARY " + contentId)
                 } else {
                   reject("NO SUMMARY FUNCTION " + contentId)
@@ -190,7 +187,11 @@
         {block:Link}
           <div class="link">
             <a href="{URL}" {Target}>
-              <h1>{Name} <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></h1>
+              <h1>
+                {Name} 
+                <!-- Chevron Right SVG -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-left: 4px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </h1>
               {block:Excerpt}<em>{Excerpt}</em>{/block:Excerpt}
               {block:Host}<abbr>{Host}</abbr>{/block:Host}
             </a>
@@ -260,7 +261,11 @@
 
         {block:HasTags}
         <div class="post_meta">
-          <span class="glyphicon glyphicon-tags tags_title" aria-hidden="true"><span class="sr-only">Tags</span></span>
+          <!-- Tag SVG Icon -->
+          <span class="tags_title" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+            <span class="sr-only">Tags</span>
+          </span>
           {block:Tags}
           <a href="{TagURL}"><span class="label label-tag">{Tag}</span></a>
           {/block:Tags}
@@ -293,15 +298,15 @@
 
   {block:Pagination}
     {block:IfNotEndlessScroll}
-    <nav>
-      <ul class="pager">
+    <nav class="pager">
+      <ul class="pager-links">
         {block:PreviousPage}
         <li class="previous">
-          <a href="{PreviousPage}"><span aria-hidden="true">&larr;</span> {lang:Previous page}</a>
+          <a href="{PreviousPage}">&larr; {lang:Previous page}</a>
         </li>
         {/block:PreviousPage}
         {block:NextPage}
-        <li class="next"><a href="{NextPage}">{lang:Next page} <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="{NextPage}">{lang:Next page} &rarr;</a></li>
         {/block:NextPage}
       </ul>
     </nav>
@@ -309,14 +314,14 @@
   {/block:Pagination}
 
   {block:PermalinkPagination}
-    <nav>
-      <ul class="pager">
+    <nav class="pager">
+      <ul class="pager-links">
         {block:NextPost}
-        <li class="previous"><a href="{NextPost}"><span aria-hidden="true">&larr;</span> {lang:Previous post}</a></li>
+        <li class="previous"><a href="{NextPost}">&larr; {lang:Previous post}</a></li>
         {/block:NextPost}
 
         {block:PreviousPost}
-        <li class="next"><a href="{PreviousPost}">{lang:Next post} <span aria-hidden="true">&rarr;</span></a></li>
+        <li class="next"><a href="{PreviousPost}">{lang:Next post} &rarr;</a></li>
         {/block:PreviousPost}
       </ul>
     </nav>
@@ -340,7 +345,7 @@
   {block:IfEndlessScroll}
   <script src="https://cdn.jsdelivr.net/gh/joostory/joostory-theme@{text:Theme Version}/js/endless_scroll.js"></script>
   <script>
-  $.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
+  new TumblrEndlessScroll(".contents", ".pager.loader", {CurrentPage});
   </script>
   {/block:IfEndlessScroll}
 {/block:IndexPage}
@@ -352,7 +357,7 @@
      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
      dsq.src = 'https://{text:Disqus Shortname}.disqus.com/embed.js';
      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+     })();
     </script>
   {/block:IfDisqusShortname}
 {/block:PermalinkPage}
@@ -369,6 +374,44 @@
 {/block:IfGoogleAnalyticsID}
 
 <script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Vanilla JS Interactions (Menu toggle & Dropdown) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+    if (menuToggle && navbarMenu) {
+      menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menuToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('show');
+      });
+    }
+
+    // Dropdown toggle
+    const dropdownTrigger = document.getElementById('dropdown-trigger');
+    const moreDropdown = document.getElementById('more-dropdown');
+    if (dropdownTrigger && moreDropdown) {
+      dropdownTrigger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        moreDropdown.classList.toggle('open');
+      });
+    }
+
+    // Close menus when clicking outside
+    document.addEventListener('click', function() {
+      if (navbarMenu && navbarMenu.classList.contains('show')) {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('show');
+      }
+      if (moreDropdown && moreDropdown.classList.contains('open')) {
+        moreDropdown.classList.remove('open');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

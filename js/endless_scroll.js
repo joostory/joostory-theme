@@ -1,70 +1,91 @@
-(function($) {
+class TumblrEndlessScroll {
+  constructor(container, pager, currentPage) {
+    this.container = typeof container === 'string' ? document.querySelector(container) : container;
+    this.pager = typeof pager === 'string' ? document.querySelector(pager) : pager;
+    this.currentPage = currentPage;
+    this.noMore = false;
+    this.loadLock = false;
+    this.pathPrefix = this._makePathPrefix();
 
-	var $window, $spinner,
-		$container, $pager,
-		_currentPage, _noMore, _loadLock;
+    this.init();
+  }
 
-	var _loadList = function() {
-		if (_noMore || _loadLock) {
-			return;
-		}
+  _makePathPrefix() {
+    const prefix = window.location.pathname.split("/page/")[0];
+    return prefix === "/" || prefix === "" ? "" : prefix;
+  }
 
-		_loadLock = true;
+  async _loadList() {
+    if (this.noMore || this.loadLock) {
+      return;
+    }
 
-		$.ajax({
-			url: _pathPrefix + "/page/" + (_currentPage + 1),
-			method: "get"
-		}).done(function(r) {
-			var $result = $(r);
-			var $contents = $result.find(".contents .post");
+    this.loadLock = true;
 
-			if ($contents.length == 0) {
-				_noMore = true;
-				$pager.hide();
-			} else {
-				$container.append($contents);
-				_currentPage++;
-			}
-			_loadLock = false;
-		}).fail(function() {
-			_noMore = true;
-		});
-	};
+    try {
+      const nextPage = this.currentPage + 1;
+      const url = `${this.pathPrefix}/page/${nextPage}`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Failed to load page");
+      }
+      
+      const htmlText = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlText, "text/html");
+      const posts = doc.querySelectorAll(".contents .post");
 
-	var onScroll = function(e) {
-		if (_noMore || !$pager.is(":visible")) {
-			return;
-		}
+      if (posts.length === 0) {
+        this.noMore = true;
+        if (this.pager) this.pager.style.display = 'none';
+      } else {
+        posts.forEach(post => {
+          this.container.appendChild(post);
+          
+          // 파싱 후 새로 주입된 포스트 내부에 NPF 요약 생성 스크립트 등
+          // 인라인 스크립트가 있다면 복제하여 명시적으로 재실행
+          const scripts = post.querySelectorAll("script");
+          scripts.forEach(script => {
+            const newScript = document.createElement("script");
+            if (script.src) {
+              newScript.src = script.src;
+            } else {
+              newScript.textContent = script.textContent;
+            }
+            script.parentNode.replaceChild(newScript, script);
+          });
+        });
+        
+        this.currentPage++;
+      }
+    } catch (error) {
+      console.error("Error during endless scroll load:", error);
+      this.noMore = true;
+      if (this.pager) this.pager.style.display = 'none';
+    } finally {
+      this.loadLock = false;
+    }
+  }
 
-		var top = $pager.offset().top,
-			appearTop = $window.scrollTop() + $window.height();
+  init() {
+    if (!this.container || !this.pager) {
+      return;
+    }
 
-		if (appearTop + 400 > top) {
-			_loadList();
-		}
-	};
+    // IntersectionObserver를 사용한 비동기 무한 스크롤 감지
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this._loadList();
+        }
+      });
+    }, {
+      rootMargin: "200px" // 뷰포트 하단 200px 전에 미리 다음 페이지 로드 시작
+    });
 
-	var _makePathPrefix = function() {
-		var prefix = location.pathname.split("/page/")[0];
-		return (prefix.length == 1)? "":prefix;
-	};
+    this.observer.observe(this.pager);
+  }
+}
 
-	var TumblrEndlessScroll = {
-		start: function(container, pager, currentPage) {
-			$container = $(container);
-			$pager = $(pager);
-			_currentPage = currentPage;
-			_noMore = false;
-			_loadLock = false;
-			_pathPrefix = _makePathPrefix();
-
-			$window = $(window);
-			$window.on("scroll", onScroll);
-		}
-	};
-
-	$.tumblrEndlessScroll = function(container, pager, currentPage) {
-		TumblrEndlessScroll.start(container, pager, currentPage);
-	};
-
-})(jQuery);
+// 브라우저 전역 노출
+window.TumblrEndlessScroll = TumblrEndlessScroll;
