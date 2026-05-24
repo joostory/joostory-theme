@@ -6,6 +6,7 @@
   <meta name="description" content="{MetaDescription}" />
 
   {block:Hidden}
+  <meta name="text:Theme Version" content="v1.0.0">
   <meta name="text:Disqus Shortname" content="">
   <meta name="text:Google Analytics ID" content="">
   <meta name="text:Google Adsense Publisher ID" content="">
@@ -36,8 +37,8 @@
   <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
   <link rel="alternate" type="application/rss+xml" title="{Title}" href="{RSS}" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/Gv0qczujv/joostory.css">
-  <link rel="stylesheet" type="text/css" media="all" href="https://static.tumblr.com/udrhgqb/PGqp04omu/spinner.css">
+  <link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/joostory/joostory-theme@{text:Theme Version}/css/joostory.css">
+  <link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/joostory/joostory-theme@{text:Theme Version}/css/spinner.css">
 
   <!-- Styles -->
   <style type="text/css">
@@ -49,7 +50,7 @@
   <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://static.tumblr.com/udrhgqb/Lf3sjwh6x/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/joostory/joostory-theme@{text:Theme Version}/js/script.js"></script>
   
   
   {block:IfGoogleAdsensePageLevelID}
@@ -337,7 +338,7 @@
 
 {block:IndexPage}
   {block:IfEndlessScroll}
-  <script src="https://static.tumblr.com/udrhgqb/R52nqx8fi/endless_scroll.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/joostory/joostory-theme@{text:Theme Version}/js/endless_scroll.js"></script>
   <script>
   $.tumblrEndlessScroll($(".contents"), $(".pager"), {CurrentPage});
   </script>
