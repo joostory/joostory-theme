@@ -5,23 +5,23 @@
   --primary: #f9dc41;
   --primary-hover: #f7d314;
   --primary-light: rgba(249, 220, 65, 0.1);
-  --bg-start: #f1f5f9;
-  --bg-end: #cbd5e1;
+  --bg-start: #000000;     /* 전체 배경 순수 검은색 */
+  --bg-end: #000000;       /* 전체 배경 순수 검은색 */
   
-  --card-bg: #ffffff;
-  --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-  --card-shadow-hover: 0 20px 40px rgba(15, 23, 42, 0.08);
-  --card-border: rgba(15, 23, 42, 0.03);
+  --card-bg: #ffffff;      /* 본문 카드 배경 흰색 */
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.25);
+  --card-border: rgba(0, 0, 0, 0.04);
   
-  --navbar-bg: rgba(30, 41, 59, 0.85);
-  --navbar-border: rgba(255, 255, 255, 0.1);
-  --navbar-text: #f1f5f9;
+  --navbar-bg: rgba(20, 20, 20, 0.85); /* 짙은 차콜 다크 헤더 */
+  --navbar-border: rgba(255, 255, 255, 0.08);
+  --navbar-text: #e4e4e7;
   --navbar-text-hover: #f9dc41;
   
-  --text-main: #334155;
-  --text-heading: #0f172a;
-  --text-muted: #64748b;
-  --link-color: #2563eb;
+  --text-main: #27272a;    /* 파란빛을 완전히 뺀 무채색 Zinc 다크 그레이 본문 */
+  --text-heading: #09090b; /* 파란빛을 완전히 뺀 무채색 Jet 블랙 제목 */
+  --text-muted: #71717a;   /* 파란빛을 완전히 뺀 중립 Zinc 그레이 */
+  --link-color: #18181b;   /* 파란색을 완전히 배제한 무채색 다크 차콜 링크 */
   
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --radius-sm: 6px;
@@ -48,7 +48,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
   color: var(--text-main);
   background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
@@ -108,6 +108,17 @@ a:hover {
   letter-spacing: -0.5px;
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.navbar-joostory .brand-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none; /* 튀는 노란색 보더 제거 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* 은은한 섀도우 대체 */
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .navbar-joostory .navbar-right-group {
@@ -288,7 +299,6 @@ a:hover {
 }
 
 .content:hover {
-  transform: translateY(-4px);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -308,7 +318,7 @@ a:hover {
 }
 
 .content p {
-  margin: 12px 0 24px;
+  margin: 8px 0 16px;
 }
 
 .content p img {
@@ -580,27 +590,31 @@ a:hover .label-tag {
   display: flex;
   gap: 16px;
   width: 100%;
-  justify-content: space-between;
+}
+
+.pager-links .next {
+  margin-left: auto; /* 이전 페이지 버튼 유무와 상관없이 다음 버튼을 우측 끝으로 강제 밀기 */
 }
 
 .pager-links li a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background-color: var(--card-bg);
+  gap: 6px;
+  padding: 6px 16px;
+  background-color: rgba(255, 255, 255, 0.06); /* 튀지 않고 어두운 무채색 배경과 융화되는 다크 톤 */
   border-radius: 30px;
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
+  box-shadow: none; /* 플랫하고 세련된 미니멀 디자인 */
+  transition: var(--transition-fast);
 }
 
 .pager-links li a:hover {
-  background-color: var(--primary);
-  border-color: var(--primary);
-  color: var(--text-heading);
-  box-shadow: 0 4px 12px rgba(249, 220, 65, 0.3);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--navbar-text);
 }
 
 /* ==========================================================================
@@ -620,6 +634,13 @@ a:hover .label-tag {
 @media (max-width: 768px) {
   body {
     padding-top: 64px;
+  }
+  
+  .navbar-joostory .navbar-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   .navbar-joostory .navbar-right-group {
@@ -653,6 +674,7 @@ a:hover .label-tag {
   .navbar-joostory .navbar-nav {
     flex-direction: column;
     align-items: stretch;
+    order: 1; /* Place menus at the top inside mobile toggle */
   }
   
   .navbar-joostory .navbar-nav > li > a {
@@ -673,6 +695,7 @@ a:hover .label-tag {
   
   .navbar-joostory .navbar-form {
     width: 100%;
+    order: 2; /* Place search form under the menus inside mobile toggle */
   }
   
   .navbar-joostory .search-input-group {
@@ -719,3 +742,21 @@ a:hover .label-tag {
     scroll-behavior: auto !important;
   }
 }
+
+/* Helper utilities for bootstrap grid replacement visibility */
+.hidden-xs {
+  display: inline-block;
+}
+.visible-xs-block {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .hidden-xs {
+    display: none !important;
+  }
+  .visible-xs-block {
+    display: block !important;
+  }
+}
+
