@@ -1,0 +1,11 @@
+{
+  "name": "joostory-theme",
+  "version": "1.0.0",
+  "description": "Modern custom theme for joostory Tumblr blog",
+  "scripts": {
+    "preview": "tumblr-theme-preview"
+  },
+  "devDependencies": {
+    "tumblr-theme-preview": "^1.0.0"
+  }
+}
