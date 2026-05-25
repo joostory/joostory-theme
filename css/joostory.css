@@ -479,6 +479,7 @@ a:hover {
 @media (min-width: 940px) {
   .post_date abbr a {
     left: -115px;
+    right: auto;
     top: 24px;
     transition: var(--transition-smooth);
     transform: rotate(5deg);
@@ -490,8 +491,9 @@ a:hover {
   }
 }
 
-@media (max-width: 940px) {
+@media (max-width: 939.98px) {
   .post_date abbr a {
+    left: auto;
     right: 20px;
     top: 20px;
     width: auto;
