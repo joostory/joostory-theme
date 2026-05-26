@@ -1,6 +1,6 @@
 {
   "name": "joostory-theme",
-  "version": "1.0.0",
+  "version": "2.0.2",
   "description": "Modern custom theme for joostory Tumblr blog",
   "scripts": {
     "preview": "tumblr-theme-preview"
