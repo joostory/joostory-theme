@@ -534,13 +534,14 @@ a:hover {
 
 .label-tag {
   display: inline-block;
-  background-color: var(--bg-start);
+  background-color: #f4f4f5;
   color: var(--text-muted);
   font-size: 12px;
   font-weight: 500;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: var(--transition-smooth);
 }
 
 a:hover .label-tag {
@@ -734,6 +735,16 @@ a:hover .label-tag {
     padding: 20px 12px 24px;
     border-radius: var(--radius-md);
     margin-bottom: 24px;
+    border: 0;
+  }
+
+  .content .npf_row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  .content .npf_row img {
+    border-radius: 0;
   }
   
   .content h1 {
